@@ -1,0 +1,20 @@
+# system info sine on 2017.06.24.09:04:57
+system_info:
+name,value
+DEVICE,5CSEMA5F31C6
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1498309482
+#
+#
+# Files generated for sine on 2017.06.24.09:04:57
+files:
+filepath,kind,attributes,module,is_top
+simulation/sine.vhd,VHDL,,sine,true
+simulation/submodules/sine_nco_ii_0_sin.hex,HEX,,sine_nco_ii_0,false
+simulation/submodules/sine_nco_ii_0_tb.vhd,OTHER,,sine_nco_ii_0,false
+simulation/submodules/sine_nco_ii_0.vho,VHDL,,sine_nco_ii_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+sine.nco_ii_0,sine_nco_ii_0

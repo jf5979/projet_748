@@ -1,0 +1,51 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/simulation/modelsim
+Esin_gen
+Z1 w1498275268
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R0
+Z5 8C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_gen.vhd
+Z6 FC:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_gen.vhd
+l0
+L15
+VBcYSW2lFZ`VY;XdTA;C[b3
+!s100 OH?GM6Vo5f<Vzi@M`eWKg2
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1498310158
+!i10b 1
+Z9 !s108 1498310158.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_gen.vhd|
+Z11 !s107 C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_gen.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Astructural
+R2
+R3
+R4
+Z14 DEx4 work 7 sin_gen 0 22 BcYSW2lFZ`VY;XdTA;C[b3
+l52
+L32
+Z15 VJHD@FSJFRAA@lS^<5G6QQ3
+Z16 !s100 3Zjmc[Y:iQokUL6DzeBKo0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

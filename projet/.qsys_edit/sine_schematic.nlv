@@ -1,0 +1,10 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst sine.nco_ii_0 -pg 1 -lvl 1 -y 30
+preplace inst sine -pg 1 -lvl 1 -y 40 -regy -20
+preplace netloc EXPORT<net_container>sine</net_container>(SLAVE)sine.clk,(SLAVE)nco_ii_0.clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>sine</net_container>(SLAVE)nco_ii_0.out,(SLAVE)sine.out) 1 0 1 NJ
+preplace netloc EXPORT<net_container>sine</net_container>(SLAVE)nco_ii_0.in,(SLAVE)sine.in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>sine</net_container>(SLAVE)nco_ii_0.rst,(SLAVE)sine.rst) 1 0 1 NJ
+levelinfo -pg 1 0 30 160
+levelinfo -hier sine 40 70 150

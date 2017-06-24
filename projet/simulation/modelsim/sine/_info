@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/simulation/modelsim
+vsine
+!s110 1498310157
+!i10b 1
+!s100 T50CWnB^o;RYXXQJ04jOI3
+I669nKYlS[2V0?<>fJ;f@K3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1498308755
+8c:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine/sine.v
+Fc:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine/sine.v
+L0 6
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1498310157.000000
+!s107 c:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine/sine.v|
+!s90 -reportprogress|300|-vlog01compat|-work|sine|+incdir+c:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine|c:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine/sine.v|
+!i113 1
+Z3 o-vlog01compat -work sine
+!s92 -vlog01compat -work sine +incdir+c:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine
+Z4 tCvgOpt 0
+vsine_nco_ii_0
+!s110 1498310158
+!i10b 1
+!s100 j_:la5@jZLUfVlB42?Z:b2
+IbMf62X7fCb=dabaj7aG3A3
+R1
+R0
+w1498308756
+8c:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0.v
+Fc:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0.v
+L0 23
+R2
+r1
+!s85 0
+31
+!s108 1498310158.000000
+!s107 c:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|sine|+incdir+c:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine/submodules|c:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0.v|
+!i113 1
+R3
+!s92 -vlog01compat -work sine +incdir+c:/users/jf/drive/ets/e2017/ele748/projet/code/projet/db/ip/sine/submodules
+R4

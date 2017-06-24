@@ -1,0 +1,228 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet
+Pmy_lib
+Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+w1498313655
+R0
+Z5 8C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/my_lib.vhd
+Z6 FC:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/my_lib.vhd
+l0
+L16
+V`Y4ZFee3jG4[[a`gn3`Yo0
+!s100 3R<eDeMQgo^aMN@9f2Z8U1
+Z7 OV;C;10.5b;63
+32
+!s110 1498313663
+!i10b 1
+!s108 1498313662.000000
+Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/my_lib.vhd|
+Z9 !s107 C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/my_lib.vhd|
+!i113 1
+Z10 o-work work -2002 -explicit
+Z11 tExplicit 1 CvgOpt 0
+Pmypackage
+R1
+R2
+R3
+R4
+w1498313433
+R0
+R5
+R6
+l0
+L16
+VX@2`hT7UiVC;fF73nUZfm1
+!s100 8VNH`nPQEZR3S2k4UQ?8j0
+R7
+32
+!s110 1498313571
+!i10b 1
+!s108 1498313571.000000
+R8
+R9
+!i113 1
+R10
+R11
+Esin_gen
+Z12 w1498314571
+R4
+R3
+Z13 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R0
+Z14 8C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_gen.vhd
+Z15 FC:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_gen.vhd
+l0
+L15
+VY[7Q`Kz7`YV2a]_6DJOAD1
+!s100 OH?GM6Vo5f<Vzi@M`eWKg2
+R7
+32
+Z16 !s110 1498314575
+!i10b 1
+Z17 !s108 1498314575.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_gen.vhd|
+Z19 !s107 C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_gen.vhd|
+!i113 1
+R10
+R11
+Astructural
+R4
+R3
+R13
+DEx4 work 7 sin_gen 0 22 Y[7Q`Kz7`YV2a]_6DJOAD1
+l52
+L32
+V4:J<f_3_n1aUSKJ^<2dz_2
+!s100 2EH0>5QI98M<o:[4H=:`?3
+R7
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R10
+R11
+Esin_testbench
+Z20 w1498314491
+R1
+R2
+Z21 DPx4 work 6 my_lib 0 22 `Y4ZFee3jG4[[a`gn3`Yo0
+R3
+R4
+R0
+Z22 8C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_testbench.vhd
+Z23 FC:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_testbench.vhd
+l0
+L29
+VGi1Ea7JFnjTWlL[5>OBC13
+!s100 aDFDA<[MR9o4kB2T8cNag3
+R7
+32
+Z24 !s110 1498314578
+!i10b 1
+Z25 !s108 1498314578.000000
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_testbench.vhd|
+Z27 !s107 C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sin_testbench.vhd|
+!i113 1
+R10
+R11
+Abehavior
+R1
+R2
+R21
+R3
+R4
+DEx4 work 13 sin_testbench 0 22 Gi1Ea7JFnjTWlL[5>OBC13
+l53
+L32
+V_JA1Ek9z[z`X`3nhQKX=J0
+!s100 ]FX0Z2LD:ie4`V;CMD@AN1
+R7
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R10
+R11
+Esine
+Z28 w1498309482
+R13
+R3
+R4
+R0
+Z29 8C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sine/simulation/sine.vhd
+Z30 FC:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sine/simulation/sine.vhd
+l0
+L9
+V8:NPLO0Ina>5hk`oboA?22
+!s100 edaMOokLbXOLl4PEzA1oc2
+R7
+32
+Z31 !s110 1498313445
+!i10b 1
+Z32 !s108 1498313445.000000
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sine/simulation/sine.vhd|
+Z34 !s107 C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sine/simulation/sine.vhd|
+!i113 1
+R10
+R11
+Artl
+R13
+R3
+R4
+DEx4 work 4 sine 0 22 8:NPLO0Ina>5hk`oboA?22
+l36
+L22
+VbTmF<>og@hW]Q5@fDUeEh0
+!s100 :J:6OPQf:7c@Hb30g^^<N2
+R7
+32
+R31
+!i10b 1
+R32
+R33
+R34
+!i113 1
+R10
+R11
+Esine_nco_ii_0
+Z35 w1498309497
+Z36 DPx5 sgate 10 sgate_pack 0 22 M>N6>_Bhn=EY0k:J`1:WZ2
+Z37 DPx3 lpm 14 lpm_components 0 22 0DgdZ0FA1O:[J5aQOXi891
+R3
+R4
+Z38 DPx9 altera_mf 20 altera_mf_components 0 22 m2K6F5NmQKkFhQa^^]15g3
+R0
+Z39 8C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sine/simulation/submodules/sine_nco_ii_0.vho
+Z40 FC:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sine/simulation/submodules/sine_nco_ii_0.vho
+l0
+L42
+V1DHnVljYd7cl?DN1baO:R3
+!s100 R]CJ`dGal5aF40;ZmTiLf3
+R7
+32
+Z41 !s110 1498314808
+!i10b 1
+Z42 !s108 1498314808.000000
+Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sine/simulation/submodules/sine_nco_ii_0.vho|
+Z44 !s107 C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sine/simulation/submodules/sine_nco_ii_0.vho|
+!i113 1
+R10
+R11
+Artl
+R36
+R37
+R3
+R4
+R38
+DEx4 work 13 sine_nco_ii_0 0 22 1DHnVljYd7cl?DN1baO:R3
+l695
+L56
+VE4jC9;I]cLY:kEXlI8Rd:3
+!s100 :jCP?8NKhGLjC_DD@zZNR2
+R7
+32
+R41
+!i10b 1
+R42
+R43
+R44
+!i113 1
+R10
+R11
