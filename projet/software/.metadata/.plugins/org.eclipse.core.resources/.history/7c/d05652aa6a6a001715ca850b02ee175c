@@ -1,0 +1,133 @@
+/******************************************************************************
+ Auteurs:		Xavier Mercure-Gagnon
+ 	 	 	 	Jean-François Penven
+ Fichier:		gen.h
+ Date:			2 juillet 2017
+ Description:	générateur de fonction
+ Version:		0.1
+******************************************************************************/
+
+#ifndef GEN_H_
+#define GEN_H_
+
+#include "system.h"
+#include "io.h"
+#include "alt_types.h"
+#include "math.h"
+//Libs generales
+#include <stdio.h>
+#include <string.h>
+
+#define US_DELAY 2083 				//ticks en temps d'echantillonage
+#define POLY_NOTES 10 				//Nombre de notes max en polyphonie
+#define NB_NOTES 20   				//Nombre de notes dispo sur le clavier ps/2
+#define FS 48000	 				//Frequence d'echantillonnage
+#define HALF_SECOND_TICKS 24000		//Frequence d'echantillonnage
+#define PI2 6.28319 				//2 pi rad
+#define ATTENUATION_REF 0.5 		//attenuation d'amplitude de reference
+#define BITS23_MAX 16777216 			//valeur maximale de 23 bits
+
+//Encodage pour les types de signaux de l'accelerateur
+#define SINUS 0
+#define CARRE 1
+#define TRIANGLE 2
+#define DENT_SCIE 3
+
+//code ascii associes aux touches
+#define A				0x61
+#define W				0x77
+#define S				0x73
+#define D				0x64
+#define R				0x72
+#define F				0x66
+#define T				0x74
+#define G				0x67
+#define H				0x68
+#define U				0x75
+#define J				0x6A
+#define I				0x69
+#define K				0x6B
+#define O				0x6F
+#define L				0x6C
+#define POINT_VIRGULE	0x3B
+#define BRACKET_GAUCHE	0x5B
+#define APOSTROPHE		0x2C
+#define BRACKET_DROITE	0x5D
+#define BACKSLASH		0x5C
+
+//frequences associees aux notes
+//https://fr.wikipedia.org/wiki/Note_de_musique
+//B = bemol
+//D = diese
+#define LA_2 	220.00
+#define SI_B_2 	233.08
+#define SI_2 	246.94
+#define DO_3 	261.63
+#define DO_D_3 	277.18
+#define RE_3 	293.66
+#define MI_B_3 	311.13
+#define MI_3 	329.63
+#define FA_3 	349.23
+#define FA_D_3 	369.99
+#define SOL_3 	392.00
+#define SOL_D_3 415.30
+#define LA_3 	440.00
+#define SI_B_3 	466.16
+#define SI_3 	493.88
+#define DO_4 	523.25
+#define DO_D_4  554.37
+#define RE_4  	587.33
+#define MI_B_4  622.25
+#define MI_4  	659.26
+
+//type de config du timer 0
+#define SET_TIMER_STAT 		0 	//registre de status
+#define SET_TIMER_CTRL 		1 	//registre de controle
+#define SET_TIMER_PERIODL 	2   //registre de la periode LSB 16bits
+#define SET_TIMER_PERIODH 	3	//registre de la periode MSB 16bits
+
+//type de config de ports IO
+#define SET_IO_REG_TO_DATA 		0	//registre de donnees
+#define SET_IO_REG_TO_DIRECTION 1	//registre de direction io
+#define SET_IO_REG_TO_INTERRUPT 2   //registre d'interruption
+#define SET_IO_REG_TO_EDGE 		3	//registre de toggle
+
+//fonction d'acces au registre du timer 0
+#define timer_read_tick(base) \
+	 (IORD(base, SET_TIMER_STAT) & 0x01)
+#define timer_clear_tick(base) \
+	 IOWR(base, SET_TIMER_STAT, 0)
+
+//contient la note et l'activation/desactivation provenant du ps2
+typedef struct ps2Note {
+	volatile unsigned char note;			//code ascii de la note
+	volatile unsigned char breakDetected;	//si detection du break code
+}ps2Note;
+
+//variables utilitaires des notes
+static alt_u8 notesATraiter[POLY_NOTES]; //notes en ascii
+static double notePeriod[POLY_NOTES]; //fraction de la frequence des notes sur la periode d'echantillonnage
+static alt_u8 decrescendo[POLY_NOTES]; //decrescendo pour chaque note lorsque bouton relache
+static alt_u8 pitchSamp[POLY_NOTES]; //echantillonage de frequence pour chaque note
+static alt_u16 volumeSamp[POLY_NOTES]; //echantillon de volume pour chaque note
+static alt_u16 decrescendoSamp[POLY_NOTES]; //echantillonage de decrescendo pour chaque note lorsque bouton relache
+//alt_u8 togglePrint = 0;
+
+//fonctions timer0
+void EnaTimer0(void);
+alt_u8 ReadTimer0(void);
+void SleepTimer0(void);
+//fonctions accelerateur materiel
+alt_u8 GetToggleValue(void);
+void SetNewNote (alt_u8 toggle, alt_u8 note, alt_u8 signal,alt_u8 noteIsDisabled);
+alt_u16 ASCIIToNote16bits(char note);
+extern void SendDataToAccMat(alt_u16 note, alt_u8 signal, alt_u8 status);
+alt_u32 GetDataFromAccMat(void);
+//fonctions generateur
+double ASCIIToNoteDouble(alt_u8 note);
+void AllocateNote(alt_u8 note, alt_u8 desactive);
+double GenerateSampAvrg(alt_u8 tremolo);
+double VolumeModulation(alt_u8 noteSamp, alt_u8 tremolo);
+alt_u32 NoteDoubleToFloat24(double sample);
+
+#endif

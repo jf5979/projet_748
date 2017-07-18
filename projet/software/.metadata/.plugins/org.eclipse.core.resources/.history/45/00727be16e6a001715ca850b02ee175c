@@ -1,0 +1,87 @@
+/******************************************************************************
+ Auteurs:		Xavier Mercure-Gagnon
+ 	 	 	 	Jean-François Penven
+ Fichier:		main.c
+ Date:			2 juillet 2017
+ Description:	main
+ Version:		0.1
+******************************************************************************/
+//drivers
+#include "gen.h"
+#include "dac.h"
+//#include "ps2_keyboard.h"
+
+
+int main(void){
+
+	static alt_u8 tremolo = 0; //bit d'activation du tremolo
+	static alt_u8 accIsOn = 0; //notes en ascii
+	static alt_32 sample = 8388608; //echantillon a envoyer au DAC
+
+	//note en provenance du ps2
+	ps2Note currentNote;
+
+	//variable de fail d'instantiation
+	alt_u8 configPS2Failure = 0;
+	alt_u8 configDACFailure = 0;
+
+	/*Init du DAC*/
+	//init configuration
+	configDACFailure = ConfigAudio();
+	//Init communication avec DAC
+	alt_up_audio_dev *audioDevice;
+	audioDevice = alt_up_audio_open_dev("/dev/audio");
+	//alt_up_audio_disable_read_interrupt(audioDevice);
+	//alt_up_audio_enable_write_interrupt(audioDevice);
+
+	//Init du PS2
+	//ps2_init();
+
+	//met en marche le timer0 d'echantillonage
+	EnaTimer0();
+
+	//si toutes les initialisations ont marchees
+	if((configDACFailure == 0) && (audioDevice != 0) && (configPS2Failure == 0)){
+
+		printf("System initialised!!!\r\n");
+
+		while(1){
+
+			//si acceleration materielle activee
+			accIsOn = GetToggleValue();
+
+			//recueille la note recente du ps2
+			//note dummy pour l'instant
+			currentNote.note = 0x61; //La2
+			currentNote.breakDetected = 0; //Pas de break
+
+			//branche les donnees a traiter a l'accelerateur ou
+			// au generateur logiciel en fonction de accIsON
+			SetNewNote(accIsOn,currentNote.note,SINUS,currentNote.breakDetected);
+
+			//si le timer0 48kHz OF
+			if(ReadTimer0()){
+				//Envoie l'echantillon le plus a jour au DAC
+				SendAudioData(audioDevice,sample);
+				//si le generateur logicielle est active et timer0 OF
+				if(accIsOn == 0){
+					//genere un echantillon sans tremolo
+					sample = NoteDoubleToFloat24(GenerateSampAvrg(tremolo));
+				}
+				//si l'accelerateur materiel est active
+				else if(accIsOn == 1) {
+					//recueille l'echantillon traite par l'accelerateur materiel
+					sample = GetDataFromAccMat();
+				}
+			}
+
+		}
+	}
+	else{
+		printf("Inits failed!!! Shutting down program!!!\r\n");
+	}
+
+	return 0;
+}
+
+

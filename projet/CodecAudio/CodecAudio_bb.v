@@ -1,40 +1,32 @@
 
 module CodecAudio (
-	memory_mem_a,
-	memory_mem_ba,
-	memory_mem_ck,
-	memory_mem_ck_n,
-	memory_mem_cke,
-	memory_mem_cs_n,
-	memory_mem_ras_n,
-	memory_mem_cas_n,
-	memory_mem_we_n,
-	memory_mem_reset_n,
-	memory_mem_dq,
-	memory_mem_dqs,
-	memory_mem_dqs_n,
-	memory_mem_odt,
-	memory_mem_dm,
-	memory_oct_rzqin,
-	hps_io_hps_io_i2c0_inst_SDA,
-	hps_io_hps_io_i2c0_inst_SCL);	
+	audio_i2c_o_SDAT,
+	audio_i2c_o_SCLK,
+	audio_o_BCLK,
+	audio_o_DACDAT,
+	audio_o_DACLRCK,
+	clk_clk,
+	dacchip_pll_audio_clk_clk,
+	datafromaccmat_i_export,
+	datatoaccmat_o_export,
+	pll_0_locked_export,
+	ps2_o_CLK,
+	ps2_o_DAT,
+	reset_reset_n,
+	toggleaccmat_i_export);	
 
-	output	[12:0]	memory_mem_a;
-	output	[2:0]	memory_mem_ba;
-	output		memory_mem_ck;
-	output		memory_mem_ck_n;
-	output		memory_mem_cke;
-	output		memory_mem_cs_n;
-	output		memory_mem_ras_n;
-	output		memory_mem_cas_n;
-	output		memory_mem_we_n;
-	output		memory_mem_reset_n;
-	inout	[7:0]	memory_mem_dq;
-	inout		memory_mem_dqs;
-	inout		memory_mem_dqs_n;
-	output		memory_mem_odt;
-	output		memory_mem_dm;
-	input		memory_oct_rzqin;
-	inout		hps_io_hps_io_i2c0_inst_SDA;
-	inout		hps_io_hps_io_i2c0_inst_SCL;
+	inout		audio_i2c_o_SDAT;
+	output		audio_i2c_o_SCLK;
+	input		audio_o_BCLK;
+	output		audio_o_DACDAT;
+	input		audio_o_DACLRCK;
+	input		clk_clk;
+	output		dacchip_pll_audio_clk_clk;
+	input	[23:0]	datafromaccmat_i_export;
+	output	[19:0]	datatoaccmat_o_export;
+	output		pll_0_locked_export;
+	inout		ps2_o_CLK;
+	inout		ps2_o_DAT;
+	input		reset_reset_n;
+	input		toggleaccmat_i_export;
 endmodule

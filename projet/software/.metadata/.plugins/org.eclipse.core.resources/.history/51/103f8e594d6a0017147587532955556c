@@ -1,0 +1,384 @@
+/******************************************************************************
+ Auteurs:		Xavier Mercure-Gagnon
+ 	 	 	 	Jean-François Penven
+ Fichier:		gen.c
+ Date:			2 juillet 2017
+ Description:	générateur de fonction
+ Version:		0.1
+******************************************************************************/
+#include "gen.h"
+
+//variables utilitaires des notes
+static alt_u8 notesATraiter[POLY_NOTES] = {0}; //notes en ascii
+static double notePeriod[POLY_NOTES] = {0}; //fraction de la frequence des notes sur la periode d'echantillonnage
+static alt_u8 decrescendo[POLY_NOTES] = {0}; //decrescendo pour chaque note lorsque bouton relache
+static alt_u8 pitchSamp[POLY_NOTES] = {0}; //echantillonage de frequence pour chaque note
+static alt_u16 volumeSamp[POLY_NOTES] = {0}; //echantillon de volume pour chaque note
+static alt_u16 decrescendoSamp[POLY_NOTES] = {0}; //echantillonage de decrescendo pour chaque note lorsque bouton relache
+
+
+/******************************** Timer 0 ************************************/
+/******************************************************************************
+Nom:			EnaTimer0
+Description:	Initialise et active le timer 0 en overflow de 2200us, donnant
+ 	 	 	 	la frequence d'echantillonnage de 45.5kHz
+Parametres:		void
+******************************************************************************/
+void EnaTimer0(void){
+
+	alt_u16 MSB, LSB;
+	alt_u32 periodeCnt;
+
+	periodeCnt = (alt_u32) US_DELAY;
+
+	// separer la periode 32bits en 2 valeurs 16 bits
+	MSB = (alt_u16) (periodeCnt >> 16);
+	LSB = (alt_u16) (periodeCnt & 0x0000FFFF);
+
+	// ecrire la periode sur 2 x 16 bits
+	IOWR(TIMER0_BASE, SET_TIMER_PERIODH, MSB);
+	IOWR(TIMER0_BASE, SET_TIMER_PERIODL, LSB);
+	// configuration du timer pour demarrage, mode continu, sans interrupt
+	IOWR(TIMER0_BASE, SET_TIMER_CTRL, 0x0006);// bits 1, 2 actifs
+}
+/******************************************************************************
+Nom:			ReadTimer0
+Description:	Lis la valeur du compteur dans le timer0. Retourne un booléen
+ 	 	 	 	pour l'échéance du timer 0. Si = 1, le timer0 est arrivé à
+ 	 	 	 	échéance, si = 0, continue de rouler
+Parametres:		retourne s'il y a eu un OF sur timer0
+*****************************************************************************/
+alt_u8 ReadTimer0(void){
+
+	if(timer_read_tick(TIMER0_BASE) == 0x01){
+		timer_clear_tick(TIMER0_BASE);
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+/******************************************************************************
+Nom:			SleepTimer0
+Description:	Desactive le timer0
+Parametres:		timervalue étant la valeur en us
+******************************************************************************/
+void SleepTimer0(void){
+
+	// arrete le timer
+	IOWR(TIMER0_BASE, SET_TIMER_CTRL, 0x0008);// bits 3 actifs
+}
+
+
+/************************* Accelerateur materiel *****************************/
+/******************************************************************************
+Nom:			GetToggleValue
+Description:	Permet d'obtenir la valeur du toggle d'accelerateur materiel
+Parametres:		void
+******************************************************************************/
+alt_u8 GetToggleValue(void){
+
+	alt_u16 toggleValue;
+
+	toggleValue = IORD(TOGGLEACCMAT_BASE, 0)& 0x01;
+	return toggleValue;
+}
+
+/******************************************************************************
+Nom:			CheckToggleValue
+Description:	Permet de choisir entre le generateur de fonction en logiciel
+ 	 	 	 	ou en accelerateur materiel
+Parametres:		toggle etant un booleen du bouton toggleAccMat
+******************************************************************************/
+void SetNewNote (alt_u8 toggle, alt_u8 note, alt_u8 signal,alt_u8 noteIsDisabled){
+	//Accelerateur materiel on, traitement audio logiciel off
+	if(toggle == 1){
+		//envoie la note recu du ps2 a l'accelerateur
+		sendDataToAccMat(ASCIIToNote16bits(note),signal,noteIsDisabled);
+	}
+	//Accelerateur materiel off, traitement audio logiciel on
+	else{
+		//alloue une note sur le vecteur de note si nouvelle
+		AllocateNote(note,noteIsDisabled);
+	}
+}
+/******************************************************************************
+Nom:			ASCIIToNote16
+Description:	Convertit un code ascii en provenance du ps/2 a une note de
+ 	 	 	 	frequence donnee 16 bits couvrant une plage de 0 a 65kHz. Si la
+ 	 	 	 	note est un caractere connu, retourne la frequence 16 bits
+ 	 	 	 	associees. Si note inconnue, retourne -1.
+Parametres:		note est le code ascii associe a une note sur le clavier ps/2
+******************************************************************************/
+alt_u16 ASCIIToNote16bits(char note){
+
+	alt_u8 cnt;
+	alt_u16 note16Bits = 0;
+	static const alt_u8 asciiChar[NB_NOTES] = {A,W,S,D,R,F,T,G,H,U,J,I,K,O,L,
+			POINT_VIRGULE,BRACKET_GAUCHE,APOSTROPHE,BRACKET_DROITE,BACKSLASH};
+	alt_u16 Freq16bits [NB_NOTES] = {222,235,249,264,279,296,314,332,352,
+			373,395,419,444,470,498,528,559,592,627,665};
+			//La2 Sib2 Si2 Do3 Do#3 Re3 Mib3 Mi3 Fa3 Fa#3 Sol3 Sol#3 La3
+			//Sib3 Si3 Do4 Do#4 Re4 Mib4 Mi4
+
+	//Conversion ascii a note 16 bits
+	for( cnt=0; cnt<NB_NOTES ; cnt++ ){
+		if(asciiChar[cnt] == note){
+			note16Bits = Freq16bits[cnt];
+		}
+	}
+	//Si note existe ou non
+	if (note16Bits != 0){
+		return note16Bits;
+	}
+	else{
+		return -1;
+	}
+}
+/******************************************************************************
+Nom:			SendDataToAccMat
+Description:	Prend la note 16bits de la fonction precedente et la
+				concatène avec le type de signal actuellement choisi (sinus,
+				carré, triangle ou dent de scie) et si la note a été relachée
+				ou appuyée.
+Parametres:		note est la valeur 16bits de la fonction precedente, signal
+				est un encodage 2bits determinant selon quel type de signal les
+				notes seront generees et status est un code 2bits determinant
+				si la note a ete relachee, appuyee ou si rien n'a changé.
+*****************************************************************************/
+void SendDataToAccMat(alt_u16 note, alt_u8 signal, alt_u8 status){
+
+	alt_u32 data;
+	alt_u32 signalTmp = (signal << 16);
+	alt_u32 statusTmp = (status << 18);
+
+	data = statusTmp + signalTmp + (alt_u32)note;
+
+	IOWR(DATATOACCMAT_BASE, SET_TIMER_PERIODH, data);
+}
+/******************************************************************************
+Nom:			GetDataFromAccMat
+Description:	Retourne la valeur recente d'amplitude que l'accelerateur
+ 	 	 	 	materiela traite.
+Parametres:		void
+*****************************************************************************/
+alt_u32 GetDataFromAccMat(void){
+
+	alt_u32 data;
+	alt_u32 dataMask = 0x0FFF;
+
+	data = IORD(DATAFROMACCMAT_BASE, 0) & dataMask ;
+
+	return data;
+}
+
+
+/******************************* generateur **********************************/
+/******************************************************************************
+Nom:			ASCIIToNoteDouble
+Description:	Convertit un code ascii en provenance du ps/2 a une note de
+ 	 	 	 	frequence donnee sur float32. Si la note est un caractere connu
+ 	 	 	 	retourne la frequence float32 associees. Si note inconnue,
+ 	 	 	 	retourne 0.
+Parametres:		note est le code ascii associe a une note sur le clavier ps/2
+*****************************************************************************/
+double ASCIIToNoteDouble(alt_u8 note){
+
+	alt_u8 cnt;
+	double noteDouble = 0;
+	static const alt_u8 asciiChar[NB_NOTES] = {A,W,S,D,R,F,T,G,H,U,J,I,K,O,L,
+			POINT_VIRGULE,BRACKET_GAUCHE,APOSTROPHE,BRACKET_DROITE,BACKSLASH};
+	double freqDouble [NB_NOTES] = {LA_2,SI_B_2,SI_2,DO_3,DO_D_3,RE_3,MI_B_3,MI_3,FA_3,
+			FA_D_3,SOL_3,SOL_D_3,LA_3,SI_B_3,SI_3,DO_4,DO_D_4,RE_4,MI_B_4,MI_4};
+
+	//Conversion ascii a note double
+	for( cnt=0; cnt<NB_NOTES ; cnt++ ){
+		if(asciiChar[cnt] == note){
+			noteDouble = freqDouble[cnt];
+		}
+	}
+	//Si note existe ou non
+	if (noteDouble != 0){
+		return noteDouble;
+	}
+	else{
+		return 0;
+	}
+}
+/******************************************************************************
+Nom:			AllocateNote
+Description:	Tout dependant du type de signal active, ajoute une nouvelle
+				note notesATraiter si place disponible et si breakCode = 0.
+				Autrement, libere une note allouee si la note est comparable
+				a un element et si breakCode = 1.
+Parametres:		note etant le code ascii associe a la note et desactive
+				est un booleen permettant d'activer ou de desactiver une note
+				dans le tableau notesATraiter
+*****************************************************************************/
+void AllocateNote(alt_u8 note, alt_u8 desactive){
+
+	alt_u8 noteCnt;
+	alt_u8 noteTrouvee = 0;
+
+	//alloue une nouvelle note
+	if (desactive == 0){
+		//determine si la note n'est pas deja allouee
+		for( noteCnt = 0 ; noteCnt < POLY_NOTES ; noteCnt++ ){
+			if(notesATraiter[noteCnt] == note){
+				noteTrouvee = 1;
+				noteCnt = 10;
+			}
+		}
+		//si la note n'est pas allouee
+		if(!noteTrouvee == 1){
+			//cherche ou allouer la note
+			for( noteCnt = 0 ; noteCnt < POLY_NOTES ; noteCnt++ ){
+				if(notesATraiter[noteCnt] == 0){
+					//allocation de la note
+					notesATraiter[noteCnt] = note;
+					//desactivation du decrescendo
+					decrescendo[noteCnt] = 0;
+					//fraction de la periode sur la frequence d'echantillonage
+					notePeriod[noteCnt] = (double)ASCIIToNoteDouble(note)/FS;
+					//reinitialise le compteur d'echantillonnage de modulation
+					pitchSamp[noteCnt] = 0;
+					//reinitialise le compteur d'echantillonnage de volume
+					volumeSamp[noteCnt] = 0;
+					//sort de la boucle
+					noteCnt = 10;
+				}
+			}
+		}
+	}
+
+	//active le descrescendo, pour eventuellement liberer une note si elle existe
+	else{
+		for( noteCnt = 0 ; noteCnt < POLY_NOTES ; noteCnt++ ){
+			if(notesATraiter[noteCnt] == note){
+				//sactivation du decrescendo
+				decrescendo[noteCnt] = 1;
+				//fraction de la periode sur la frequence d'echantillonage a 0
+				notePeriod[noteCnt] = 0.0;
+				//reinitialise le compteur d'echantillonnage de modulation a 0
+				pitchSamp[noteCnt] = 0;
+				//reinitialise le compteur d'echantillonnage de volume a 0
+				volumeSamp[noteCnt] = 0;
+				//sort de la boucle
+				noteCnt = 10;
+			}
+		}
+	}
+}
+/******************************************************************************
+Nom:			GenerateSampAvrg
+Description:	Retourne l'amplitude moyenne de l'ensemble des notes allouees
+Parametres:
+*****************************************************************************/
+double GenerateSampAvrg(alt_u8 tremolo){
+
+	alt_u8 sampCnt;
+	double sampAvrg = 0;		//moyenne des 10 echantillons
+	double sampAdd = 0;			//10 echantillons de notes additionnes
+	double sampAtt = 0;			//10 echantillons d'attenuation de volume de
+								// note
+	double multiPeriod = 0; 	//multiple de la periode d'echantillonnage
+								// pour chaque note
+
+	//Additionne chaque echantillon de notes
+	for( sampCnt=0 ; sampCnt<POLY_NOTES ; sampCnt++ ){
+		//si note est allouee
+		if(notesATraiter[sampCnt] != 0){
+			//xcnt*(Frequence de la note/Frequence d'echantillonnage))
+			multiPeriod = (double)pitchSamp[sampCnt]*notePeriod[sampCnt];
+			//si multiple plus petit que periode d'echantillonnage
+			// continu d'accumuler les multiples de la frequence
+			if(multiPeriod < 1.0){
+				pitchSamp[sampCnt]++;
+			}
+			//si multiple plus grand ou egal que periode d'echantillonnage
+			else{
+				pitchSamp[sampCnt]=1;
+				multiPeriod = 0.0;
+			}
+			//calcul de l'attenuation d'une note
+			sampAtt = VolumeModulation(sampCnt,tremolo);
+			//sin(2*pi*multiple echantillons)
+			sampAdd = sampAdd + sampAtt*sin( (double)PI2*(double)multiPeriod );
+		}
+	}
+
+	//Fait la moyenne des notes
+	sampAvrg = sampAdd / (double)POLY_NOTES;
+
+	return sampAvrg;
+}
+/******************************************************************************
+Nom:			VolumeModulation
+Description:	Module le volume d'une note en fonction du temps avec une
+				accentuation initiale
+Parametres:		noteSamp est la reference du volume ponctuel d'une note,
+				tremolo est un booleen activant le tremolo en gardant la note
+				sur 90% du volume de reference
+*****************************************************************************/
+double VolumeModulation(alt_u8 noteSamp, alt_u8 tremolo){
+
+	double volume;
+
+	//pas de descrescendo
+	if(decrescendo[noteSamp] == 0){
+		//Legere accentuation
+		//baisse lineaire de 100% jusqu'a 90% pendant 0.5 sec
+		//de 0 a 22726 echantillons
+		if(volumeSamp[noteSamp] <= HALF_SECOND_TICKS){
+			volume = ((double)HALF_SECOND_TICKS-(double)volumeSamp[noteSamp]*0.1)/(double)HALF_SECOND_TICKS;
+			volumeSamp[noteSamp]++;
+		}
+		//garde la note a 90%
+		//ajout un tremolo si active
+		else{
+			if (tremolo == 1){
+			}
+			else{
+				volume = (double)0.9;
+			}
+		}
+		//set le decrescendo a son max de 90%%
+		decrescendoSamp[noteSamp] = HALF_SECOND_TICKS;
+	}
+
+	//descrendo lineaire sur 0.5 sec de 90% a 0%, desactivant la note a sa fin
+	else{
+		//si le decrescendo n'est pas a sa fin
+		if(decrescendoSamp[noteSamp] > 0){
+			decrescendoSamp[noteSamp]--;
+			volume = (double)decrescendoSamp[noteSamp]*0.9/(double)HALF_SECOND_TICKS;
+		}
+		//si le decrescendo est a sa fin
+		else{
+			volume = 0.0;
+			//libere le code ascii associe a la note qui sera desactivee au
+			// prochain echantillon
+			notesATraiter[noteSamp] = 0;
+		}
+	}
+
+	return volume;
+}
+/******************************************************************************
+Nom:			NoteDoubleTo24Bits
+Description:	Convertie l'amplitude -1 a 1 en valeur 24 bits flottant de 0
+				a 1
+Parametres:		sample est la reference du volume ponctuel d'une note
+*****************************************************************************/
+alt_u32 NoteDoubleToFloat24(double sample){
+
+	double sampleREF;
+	alt_32 sampleFloat24;
+
+	//amplitude de reference de l'echantillon
+	sampleREF = (double)ATTENUATION_REF*(sample+1.0);
+	//conversion sur 32 bits signes avec 23 bits de donnees
+	sampleFloat24 = (alt_32)BITS23_MAX*sampleREF;
+
+	return sampleFloat24;
+}

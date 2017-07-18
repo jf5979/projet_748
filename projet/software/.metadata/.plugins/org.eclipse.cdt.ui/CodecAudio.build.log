@@ -1,0 +1,9 @@
+17:45:41 **** Incremental Build of configuration Nios II for project CodecAudio ****
+make all 
+Info: Building ../CodecAudio_bsp/
+C:/altera_lite/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../CodecAudio_bsp/
+[BSP build complete]
+[CodecAudio build complete]
+
+17:45:42 Build Finished (took 922ms)
+

@@ -1,0 +1,95 @@
+/******************************************************************************
+ Auteurs:		Xavier Mercure-Gagnon
+ 	 	 	 	Jean-François Penven
+ Fichier:		dac.h
+ Date:			2 juillet 2017
+ Description:	communication et parametrage du DAC
+ Version:		0.1
+******************************************************************************/
+
+#ifndef DAC_H_
+#define DAC_H_
+
+#include "altera_up_avalon_audio_and_video_config.h"
+#include "altera_up_avalon_audio.h"
+#include "altera_up_avalon_audio_regs.h"
+
+#define AUDIO_DATA_SIZE 1
+
+/***************************registres de controle*****************************/
+//control slave addresses
+//est-ce vraiment utile vu les drivers?
+#define CSB_ADDR1_LOW					0x0000001A
+#define CSB_ADDR1_HIGH					0x0000001B
+/*****************************************************************************/
+//registre de controle: bits 15 a 9
+//registre de donnees:  bits 8 a 0
+#define REG_MAP_DATA_OFFSET	0
+#define REG_MAP_CTRL_OFFSET 9
+/********************registres controle: de configuration**********************/
+/*****************************************************************************/
+//Adresses de registre du canal d'entree gauche
+#define LEFT_CHANNEL_IN_REG				0X00000000
+//Adresses de registre du canal d'entree droite
+#define RIGHT_CHANNEL_IN_REG			0X00000001
+//cross detection, ecrire en mode mono et ajuster gain de sortie
+//de -73 a +6dB -> +6db=0x7F 0db=0x79 -73db=0x60
+#define GAIN_OFF 						0x00000000//gain +3dB
+/*****************************************************************************/
+//Adresses de registre du canal de sortie gauche
+#define LEFT_CHANNEL_OUT_REG			0X00000002
+//Adresses de registre du canal de sortie droite
+#define RIGHT_CHANNEL_OUT_REG			0X00000003
+//cross detection, ecrire en mode mono et ajuster gain de sortie
+//de -73 a +6dB -> +6db=0x7F 0db=0x79 -73db=0x60
+#define GAIN_P3DB 						0x000001FC//gain +3dB
+#define GAIN_0DB 						0x000001F9//gain unitaire
+#define GAIN_M3DB 						0x000001F6//gain -3dB
+/*****************************************************************************/
+//Adresses de registre du digital audio path control
+//pas de side tone et pas de side attenuation pour ecouteurs
+#define ANALOG_AUDIO_PATH_CONTROL_REG  	0x00000004
+//pas de line in et pas microphone, seulement DAC output
+//core clock normal
+#define DACSEL_ONLY						0x00000010
+/*****************************************************************************/
+//Adresses de registre du digital audio path control
+#define DIGITAL_AUDIO_PATH_CONTROL_REG 	0x00000005
+//HPF ADC off, pas de DC offset en memoire, dephasage frequentiel 48kHz et
+// soft mute
+#define DEAMPHASIS_48KHZ_AND_SOFT_MUTE 	0x0000000F
+/*****************************************************************************/
+//adresse de power down
+#define POWER_DOWN_CONTROL_REG			0x00000006
+//power down du line-in, microphone, ADC; alim du DAC, line-out, oscillateur
+// clkout et machine on.
+#define DAC_ON							0x00000007
+/*****************************************************************************/
+//Adresses de registre de format des donnees d'entree
+#define DIGITAL_AUDIO_FORMAT_REG 		0X00000007
+//mode I2S, 24bits, right channel sur DACLRC bas niveau, pas de channel
+// swap, master mode, BLCK non inverse
+#define I2S_MASTERMODE					0x0000004A
+/*****************************************************************************/
+//Adresses de registre d'echantillonage
+#define SAMPLING_CONTROL_REG 			0x00000008
+//mode normal, surechantillonage a 256fs = 48kHz
+#define SAMPLING_48KHZ					0x00000000
+/*****************************************************************************/
+//Adresses de registre pour activer l'interface audio apres configuration
+#define ACTIVE_CONTROL_REG				0x00000009
+//mise a jour des controles
+#define ACTIVE_CONTROL_ON				0x00000001
+#define ACTIVE_CONTROL_OFF				0x00000000
+/*****************************************************************************/
+//registre de reset de la machine
+#define RESET_REG						0x0000000F
+//data de reset
+#define RESET							0x00000000
+/*****************************************************************************/
+
+//fonctions
+alt_u8 ConfigAudio(void);
+void SendAudioData(alt_up_audio_dev *audioDevice,alt_u32 *data);
+
+#endif /* DAC_H_ */

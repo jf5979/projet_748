@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;CodecAudio/src/ps2_keyboard.c&apos;" deleteContents="false" description="Delete resource &apos;CodecAudio/src/ps2_keyboard.c&apos;" element1="/CodecAudio/src/ps2_keyboard.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1500226269965"/>&#x0A;<refactoring comment="Delete resource &apos;CodecAudio/src/Ps2_keyboard.h&apos;" deleteContents="false" description="Delete resource &apos;CodecAudio/src/Ps2_keyboard.h&apos;" element1="/CodecAudio/src/Ps2_keyboard.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1500226278841"/>
+</session>

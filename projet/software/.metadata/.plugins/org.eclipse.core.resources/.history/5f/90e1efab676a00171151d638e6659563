@@ -1,0 +1,108 @@
+/******************************************************************************
+ Auteurs:		Xavier Mercure-Gagnon
+ 	 	 	 	Jean-François Penven
+ Fichier:		dac.c
+ Date:			2 juillet 2017
+ Description:	communication et parametrage du DAC
+ Version:		0.1
+******************************************************************************/
+#include "dac.h"
+
+
+
+/*******************************audio config**********************************/
+/******************************************************************************
+Nom:			ConfigAudio
+Description:	Configure le DAC. Retourne 1 si une partie de la config a
+				echouee
+Parametres:		void
+******************************************************************************/
+alt_u8 ConfigAudio(void){
+
+	alt_up_av_config_dev *audioConfigDevice;
+	alt_u8 configFailure = 0;
+
+	audioConfigDevice = alt_up_av_config_open_dev("/dev/audio_and_video_config");
+
+	if(audioConfigDevice != 0){
+
+		printf("Audio configuration instantiated sucessfully!!!\r\n");
+
+		//desactivation line-in gauche
+		if(alt_up_av_config_write_audio_cfg_register(audioConfigDevice,LEFT_CHANNEL_IN_REG,GAIN_OFF) != 0){
+			printf("Left channel line-in couldn't be disabled!!!\r\n");
+			configFailure = 1;
+		}
+		//desactivation line-in droit
+		if(alt_up_av_config_write_audio_cfg_register(audioConfigDevice,RIGHT_CHANNEL_IN_REG,GAIN_OFF) != 0 ){
+			printf("Right channel line-in couldn't be disabled!!!\r\n");
+			configFailure = 1;
+		}
+		//config du line-out gauche
+		if(alt_up_av_config_write_audio_cfg_register(audioConfigDevice,LEFT_CHANNEL_OUT_REG,GAIN_M9DB) != 0 ){
+			printf("Left channel line-out couldn't be configured!!!\r\n");
+			configFailure = 1;
+		}
+		//config du line-out droit
+		if(alt_up_av_config_write_audio_cfg_register(audioConfigDevice,RIGHT_CHANNEL_OUT_REG,GAIN_M9DB) != 0 ){
+			printf("Right channel line-out couldn't be configured!!!\r\n");
+			configFailure = 1;
+		}
+		//config du path analog audio
+		if(alt_up_av_config_write_audio_cfg_register(audioConfigDevice,ANALOG_AUDIO_PATH_CONTROL_REG,DACSEL_ONLY) != 0 ){
+			printf("Analog audio path couldn't be configured!!!\r\n");
+			configFailure = 1;
+		}
+		//config du path digital audio
+		if(alt_up_av_config_write_audio_cfg_register(audioConfigDevice,DIGITAL_AUDIO_PATH_CONTROL_REG,DEAMPHASIS_48KHZ_AND_SOFT_MUTE) != 0 ){
+			printf("Digital audio path couldn't be configured!!!\r\n");
+			configFailure = 1;
+		}
+		//config du power down
+		if(alt_up_av_config_write_audio_cfg_register(audioConfigDevice,POWER_DOWN_CONTROL_REG,DAC_ON) != 0 ){
+			printf("Power down couldn't be configured!!!\r\n");
+			configFailure = 1;
+		}
+		//config des formats et de la communication de donnees
+		if(alt_up_av_config_write_audio_cfg_register(audioConfigDevice,DIGITAL_AUDIO_FORMAT_REG,I2S_MASTERMODE) != 0 ){
+			printf("Data format couldn't be configured!!!\r\n");
+			configFailure = 1;
+		}
+		//config de l'echantillonnage
+		if(alt_up_av_config_write_audio_cfg_register(audioConfigDevice,SAMPLING_CONTROL_REG,SAMPLING_48KHZ) != 0 ){
+			printf("Sampling couldn't be configured!!!\r\n");
+			configFailure = 1;
+		}
+		//activation de l'interface audio
+		if(alt_up_av_config_write_audio_cfg_register(audioConfigDevice,ACTIVE_CONTROL_REG,ACTIVE_CONTROL_ON) != 0 ){
+			printf("Audio interface couldn't be activated!!!\r\n");
+			configFailure = 1;
+		}
+		if(configFailure == 1){
+			printf("Audio configuration has failed!!!\r\n");
+			printf("Please troubleshoot config registers!!!\r\n");
+		}
+		else{
+			printf("Audio configuration is successful!!!\r\n");
+		}
+
+		return configFailure;
+	}
+	else{
+		printf("Audio configuration cannot be instantiated!!!\r\n");
+		printf("Please troubleshoot device instantiation or connection!!!\r\n");
+		return 1;
+	}
+}
+
+/********************************audio data***********************************/
+/******************************************************************************
+Nom:			SendAudioData
+Description:	Envoie l'amplitude echantillonnee au DAC pour etre traitee
+Parametres:		data est une amplitude echantillonnee a la frequence
+				d'echantillonnage.
+******************************************************************************/
+void SendAudioData( alt_up_audio_dev *audioDevice, alt_u32 data){
+	alt_up_audio_play_l(audioDevice,*data,1);
+	alt_up_audio_write_fifo_head(audioDevice,0,12);
+}
