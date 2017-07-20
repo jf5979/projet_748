@@ -54,7 +54,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 15.1 185 win32 2017.06.24.09:05:01
+# ACDS 15.1 185 win32 2017.07.13.07:48:59
 
 # ----------------------------------------
 # Initialize variables
@@ -69,7 +69,7 @@ if ![info exists TOP_LEVEL_NAME] {
 }
 
 #if ![info exists QSYS_SIMDIR] { 
-  set QSYS_SIMDIR "C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sine/simulation"
+  set QSYS_SIMDIR "C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/sine/simulation"
 #}
 
 if ![info exists QUARTUS_INSTALL_DIR] { 
@@ -95,7 +95,10 @@ if ![ string match "*-64 vsim*" [ vsim -version ] ] {
 # Copy ROM/RAM files to simulation directory
 alias file_copy {
   echo "\[exec\] file_copy"
-  file copy -force $QSYS_SIMDIR/submodules/sine_nco_ii_0_sin.hex ./
+  file copy -force $QSYS_SIMDIR/submodules/sine_nco_ii_0_sin_c.hex ./
+  file copy -force $QSYS_SIMDIR/submodules/sine_nco_ii_0_cos_c.hex ./
+  file copy -force $QSYS_SIMDIR/submodules/sine_nco_ii_0_sin_f.hex ./
+  file copy -force $QSYS_SIMDIR/submodules/sine_nco_ii_0_cos_f.hex ./
 }
 
 # ----------------------------------------
@@ -151,8 +154,8 @@ alias dev_com {
 # Compile the design files in correct order
 alias com {
   echo "\[exec\] com"
-  eval  vcom $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR\submodules\sine_nco_ii_0.vho" -work nco_ii_0
-  eval  vcom $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR\sine.vhd"                                   
+  eval  vcom $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sine_nco_ii_0.vho" -work nco_ii_0
+  eval  vcom $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/sine.vhd"                                   
 }
 
 # ----------------------------------------

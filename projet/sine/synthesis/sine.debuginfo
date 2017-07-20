@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="sine" kind="system" version="15.1" fabric="QSYS">
  <!-- Format version 15.1 185 (Future versions may contain additional information.) -->
- <!-- 2017.06.24.09:05:01 -->
+ <!-- 2017.07.13.07:48:59 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1498309501</value>
+  <value>1499946539</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -161,7 +161,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="arch">
    <type>java.lang.String</type>
-   <value>large_rom</value>
+   <value>trig</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -195,7 +195,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>true</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -245,7 +245,7 @@ the requested settings for a module instance. -->
    <value>1</value>
    <derived>false</derived>
    <enabled>true</enabled>
-   <visible>false</visible>
+   <visible>true</visible>
    <valid>true</valid>
   </parameter>
   <parameter name="cycles_per_output">
@@ -253,7 +253,7 @@ the requested settings for a module instance. -->
    <value>1</value>
    <derived>true</derived>
    <enabled>true</enabled>
-   <visible>true</visible>
+   <visible>false</visible>
    <valid>true</valid>
   </parameter>
   <parameter name="want_dither">
@@ -626,5 +626,5 @@ parameters are a RESULT of the module parameters. -->
   <version>15.1</version>
  </plugin>
  <reportVersion>15.1 185</reportVersion>
- <uniqueIdentifier>AC220BD6969B0000015CDA34A2D3</uniqueIdentifier>
+ <uniqueIdentifier>F0761C619CA20000015D3BC7DB17</uniqueIdentifier>
 </EnsembleReport>

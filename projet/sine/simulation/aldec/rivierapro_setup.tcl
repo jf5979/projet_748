@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 15.1 185 win32 2017.06.24.09:05:01
+# ACDS 15.1 185 win32 2017.07.13.07:48:59
 # ----------------------------------------
 # Auto-generated simulation script rivierapro_setup.tcl
 # ----------------------------------------
@@ -106,7 +106,10 @@ if { [ string match "Active" $Aldec ] } {
 # Copy ROM/RAM files to simulation directory
 alias file_copy {
   echo "\[exec\] file_copy"
-  file copy -force $QSYS_SIMDIR/submodules/sine_nco_ii_0_sin.hex ./
+  file copy -force $QSYS_SIMDIR/submodules/sine_nco_ii_0_sin_c.hex ./
+  file copy -force $QSYS_SIMDIR/submodules/sine_nco_ii_0_cos_c.hex ./
+  file copy -force $QSYS_SIMDIR/submodules/sine_nco_ii_0_sin_f.hex ./
+  file copy -force $QSYS_SIMDIR/submodules/sine_nco_ii_0_cos_f.hex ./
 }
 
 # ----------------------------------------

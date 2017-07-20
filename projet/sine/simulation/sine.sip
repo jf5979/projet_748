@@ -5,6 +5,9 @@ set_global_assignment -library "lib_sine" -name SPD_FILE [file join $::quartus(s
 set_global_assignment -library "lib_sine" -name MISC_FILE [file join $::quartus(sip_path) "../../sine.qsys"]
 
 set_global_assignment -library "lib_sine" -name MISC_FILE [file join $::quartus(sip_path) "sine.vhd"]
-set_global_assignment -library "lib_sine" -name MISC_FILE [file join $::quartus(sip_path) "submodules/sine_nco_ii_0_sin.hex"]
+set_global_assignment -library "lib_sine" -name MISC_FILE [file join $::quartus(sip_path) "submodules/sine_nco_ii_0_sin_c.hex"]
+set_global_assignment -library "lib_sine" -name MISC_FILE [file join $::quartus(sip_path) "submodules/sine_nco_ii_0_cos_c.hex"]
+set_global_assignment -library "lib_sine" -name MISC_FILE [file join $::quartus(sip_path) "submodules/sine_nco_ii_0_sin_f.hex"]
+set_global_assignment -library "lib_sine" -name MISC_FILE [file join $::quartus(sip_path) "submodules/sine_nco_ii_0_cos_f.hex"]
 set_global_assignment -library "lib_sine" -name MISC_FILE [file join $::quartus(sip_path) "submodules/sine_nco_ii_0_tb.vhd"]
 set_global_assignment -library "lib_sine" -name MISC_FILE [file join $::quartus(sip_path) "submodules/sine_nco_ii_0.vho"]

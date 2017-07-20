@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2017.06.24.09:35:16"
- outputDirectory="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/">
+ date="2017.07.13.07:52:55"
+ outputDirectory="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -79,13 +79,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="sine:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1498311313,AUTO_UNIQUE_ID=(altera_nco_ii:15.1:apr=32,aprf=32,apri=16,aprp=16,arch=large_rom,cordic_arch=parallel,cycles_per_output=1,design_env=NATIVE,dpri=4,fmod_pipe=1,freq_out=0.023,fsamp=100.0,hyper_opt=false,hyper_opt_select=false,mpr=24,numba=1,numch=1,phi_inc=987842,pmod_pipe=1,real_freq_out=0.023,selected_device_family=Cyclone V,trig_cycles_per_output=1,use_dedicated_multipliers=true,want_dither=true,want_freq_mod=true,want_phase_mod=true,want_sin_and_cos=single_output)"
+   parameterizationKey="sine:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1499946771,AUTO_UNIQUE_ID=(altera_nco_ii:15.1:apr=32,aprf=32,apri=16,aprp=16,arch=trig,cordic_arch=parallel,cycles_per_output=1,design_env=NATIVE,dpri=4,fmod_pipe=1,freq_out=0.023,fsamp=100.0,hyper_opt=false,hyper_opt_select=false,mpr=24,numba=1,numch=1,phi_inc=987842,pmod_pipe=1,real_freq_out=0.023,selected_device_family=Cyclone V,trig_cycles_per_output=1,use_dedicated_multipliers=true,want_dither=true,want_freq_mod=true,want_phase_mod=true,want_sin_and_cos=single_output)"
    instancePathKey="sine"
    kind="sine"
    version="1.0"
    name="sine">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1498311313" />
+  <parameter name="AUTO_GENERATION_ID" value="1499946771" />
   <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -94,74 +94,106 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <generatedFiles>
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/sine.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/sine.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0_sin.hex"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0_sin_c.hex"
        type="HEX"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0_cos_c.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0_sin_f.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0_cos_f.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_fxx.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/mac_i_lpmd.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_mob_rw.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_fxx.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_isdr.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_apr_dxx.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_apr_dxx.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_mob_w.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_pxx.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_dxx_g.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_dxx_g.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_as_m_dp_cen.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_dxx.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_as_m_cen.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_gal.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcpipe.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_as_m_cen.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_derot.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcpipe.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_isdr.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altq.ocp"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_pxx.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/las.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_dxx.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/lmsd.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_gam_dp.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altq.ocp"
        type="OTHER"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcash.ocp"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcash.ocp"
        type="OTHER"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcpipe.ocp"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcpipe.ocp"
        type="OTHER"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/sine.qsys" />
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/sine.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
@@ -191,7 +223,7 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="altera_nco_ii:15.1:apr=32,aprf=32,apri=16,aprp=16,arch=large_rom,cordic_arch=parallel,cycles_per_output=1,design_env=NATIVE,dpri=4,fmod_pipe=1,freq_out=0.023,fsamp=100.0,hyper_opt=false,hyper_opt_select=false,mpr=24,numba=1,numch=1,phi_inc=987842,pmod_pipe=1,real_freq_out=0.023,selected_device_family=Cyclone V,trig_cycles_per_output=1,use_dedicated_multipliers=true,want_dither=true,want_freq_mod=true,want_phase_mod=true,want_sin_and_cos=single_output"
+   parameterizationKey="altera_nco_ii:15.1:apr=32,aprf=32,apri=16,aprp=16,arch=trig,cordic_arch=parallel,cycles_per_output=1,design_env=NATIVE,dpri=4,fmod_pipe=1,freq_out=0.023,fsamp=100.0,hyper_opt=false,hyper_opt_select=false,mpr=24,numba=1,numch=1,phi_inc=987842,pmod_pipe=1,real_freq_out=0.023,selected_device_family=Cyclone V,trig_cycles_per_output=1,use_dedicated_multipliers=true,want_dither=true,want_freq_mod=true,want_phase_mod=true,want_sin_and_cos=single_output"
    instancePathKey="sine:.:nco_ii_0"
    kind="altera_nco_ii"
    version="15.1"
@@ -220,68 +252,100 @@
   <parameter name="want_sin_and_cos" value="single_output" />
   <parameter name="phi_inc" value="987842" />
   <parameter name="fmod_pipe" value="1" />
-  <parameter name="arch" value="large_rom" />
+  <parameter name="arch" value="trig" />
   <parameter name="freq_out" value="0.023" />
   <parameter name="real_freq_out" value="0.023" />
   <generatedFiles>
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0_sin.hex"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0_sin_c.hex"
        type="HEX"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0_cos_c.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0_sin_f.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0_cos_f.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/sine_nco_ii_0.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_fxx.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/mac_i_lpmd.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_mob_rw.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_fxx.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_isdr.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_apr_dxx.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_apr_dxx.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_mob_w.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_pxx.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_dxx_g.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_dxx_g.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_as_m_dp_cen.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_dxx.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_as_m_cen.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_gal.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcpipe.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_as_m_cen.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_derot.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcpipe.v"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_isdr.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altq.ocp"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_nco_pxx.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/las.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_dxx.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/lmsd.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_gam_dp.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altq.ocp"
        type="OTHER"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcash.ocp"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcash.ocp"
        type="OTHER"
        attributes="" />
    <file
-       path="C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcpipe.ocp"
+       path="C:/Users/jf/Drive/ETS/E2017/ELE748/Projet/code/projet/db/ip/sine/submodules/asj_altqmcpipe.ocp"
        type="OTHER"
        attributes="" />
   </generatedFiles>

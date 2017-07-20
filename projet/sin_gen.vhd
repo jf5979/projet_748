@@ -11,6 +11,7 @@
 library ieee;
 use IEEE.NUMERIC_STD.all;
 use ieee.std_logic_1164.all;
+use work.my_lib.all;
 
 entity sin_gen is 
 	port(
@@ -19,12 +20,12 @@ entity sin_gen is
 		--Amplitude frequence et phase des sinus
 		--amplitude 	: in std_logic_vector (15 downto 0); 
 		frequency 	: in std_logic_vector (15 downto 0);
-		phase		: in std_logic_vector (15 downto 0);
+		--Enable module
+		enable		:in std_logic;
 		--signal de remise a zero et d'activation
 		reset 		: in std_logic;
-		enable		: in std_logic;
 		--sinus result
-		sin_out 	:out std_logic_vector(23 downto 0)
+		sin_out 	: out std_logic_vector(23 downto 0)
 	);
 end sin_gen;
 
@@ -32,25 +33,16 @@ end sin_gen;
 architecture structural of sin_gen is
 	signal	sin_buffer 		: std_logic_vector(23 downto 0);
 	signal out_valide 		: std_logic;
-	signal frequency_mod 	:std_logic_vector(31 downto 0) :=x"00000001";
+	signal frequency_mod 	:std_logic_vector(31 downto 0) :=x"00000000";
 	--frequence pour le calcul du sinus
 	constant freq_to_phi 	: std_logic_vector(7 downto 0) :="00101011";
+	constant phase		: std_logic_vector (15 downto 0):=x"0000"; 
+	--
 	signal 	 phi_cal 		: std_logic_vector(31 downto 0);
 	signal reset_n			: std_logic :='1';
-	component sine is
-		port (
-			clk         : in  std_logic                     := 'X';             -- clk
-			clken       : in  std_logic                     := 'X';             -- clken
-			phi_inc_i   : in  std_logic_vector(31 downto 0) := (others => 'X'); -- phi_inc_i
-			freq_mod_i  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- freq_mod_i
-			phase_mod_i : in  std_logic_vector(15 downto 0) := (others => 'X'); -- phase_mod_i
-			fsin_o      : out std_logic_vector(23 downto 0);                    -- fsin_o
-			out_valid   : out std_logic;                                        -- out_valid
-			reset_n     : in  std_logic                     := 'X'              -- reset_n
-		);
-	end component sine;
+	
+
 	begin
-		
 		
 		sin:component sine
 			port map (
@@ -76,14 +68,10 @@ architecture structural of sin_gen is
 					reset_n<='1';
 					phi_cal<="00000000"&std_logic_vector(unsigned(frequency)*unsigned(freq_to_phi));
 				end if;	
+				sin_out<=sin_buffer;
 			end if;
 		
 		end process;
-		
-		--attenuation control:process(clk)
-		--begin
-		
-		--end process;
-		sin_out<=sin_buffer;
 
+		
 end;

@@ -39,29 +39,59 @@ ARCHITECTURE behavior OF sin_testbench IS
    signal Clk : std_logic := '0';
    signal reset_sim : std_logic := '0';
    signal enable_sim : std_logic := '1';
-   signal frequency_sim : std_logic_vector(15 downto 0) := "0010011100010000";
-   signal phase_sim : std_logic_vector(15 downto 0) := x"0001";
-
+   --signal frequency_sim : std_logic_vector(15 downto 0) := "0010011100010000";--10khz
+   --signal frequency_sim : std_logic_vector(15 downto 0) :=x"59D8";--10khz
+   signal frequency_sim : std_logic_vector(15 downto 0) :=x"00FF";--255hz
+   signal phase_sim : std_logic_vector(15 downto 0) := x"0000";
 
  	--Outputs
 	signal sinus : STD_LOGIC_VECTOR (23 downto 0) ;
-	
-
+	signal square: STD_LOGIC_VECTOR (23 downto 0) ;
+	signal triangle: STD_LOGIC_VECTOR (23 downto 0) ;
+	signal sawtooth: STD_LOGIC_VECTOR (23 downto 0) ;
    -- Clock period definitions
    constant Clk_period : time := 10 ns;
  
 BEGIN
 	-- Instantiate the Unit Under Test (UUT)
-   uut: sin_gen PORT MAP (
+   uut_sin: sin_gen PORT MAP (
         Clk => Clk,
 		frequency =>frequency_sim,
-		phase =>phase_sim,
 		--signal de remise a zero et d'activation
 		reset	=>reset_sim,
-		enable	=> enable_sim,
 		
 		sin_out 	=> sinus
         );
+		
+	uut_square:square_gen port map(
+	    Clk => Clk,
+		frequency =>frequency_sim,
+		--signal de remise a zero et d'activation
+		reset	=>reset_sim,
+		
+		square_out 	=> square
+	
+	);	
+	uut_triangle:triangle_gen port map(
+	    Clk => Clk,
+		frequency =>frequency_sim,
+		--signal de remise a zero et d'activation
+		reset	=>reset_sim,
+		
+		triangle_out 	=> triangle
+	
+	);
+
+	uut_sawtooth:sawtooth_gen port map(
+	    Clk => Clk,
+		frequency =>frequency_sim,
+		--signal de remise a zero et d'activation
+		reset	=>reset_sim,
+		
+		sawtooth_out 	=> sawtooth
+	
+	);	
+	
    -- Clock process definitions
    Clk_process :process
    begin
@@ -76,7 +106,14 @@ BEGIN
 	reset_sim<='1';
 	wait for Clk_period*8;
 	reset_sim<='0';
-	wait for clk_period*1000000;
+	-- wait for clk_period*12000;
+	-- --reset_sim<='1';
+	-- frequency_sim<=x"0200";
+	-- wait for Clk_period;
+	-- reset_sim<='0';
+	-- wait for clk_period*12000;
+	-- frequency_sim<=x"ffff";
+	wait for 2000ms;
 
 
 

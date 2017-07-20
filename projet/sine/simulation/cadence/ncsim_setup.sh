@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 15.1 185 win32 2017.06.24.09:05:01
+# ACDS 15.1 185 win32 2017.07.13.07:48:59
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -59,7 +59,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 15.1 185 win32 2017.06.24.09:05:01
+# ACDS 15.1 185 win32 2017.07.13.07:48:59
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="sine"
@@ -110,7 +110,10 @@ mkdir -p ./libraries/cyclonev/
 # ----------------------------------------
 # copy RAM/ROM files to simulation directory
 if [ $SKIP_FILE_COPY -eq 0 ]; then
-  cp -f $QSYS_SIMDIR/submodules/sine_nco_ii_0_sin.hex ./
+  cp -f $QSYS_SIMDIR/submodules/sine_nco_ii_0_sin_c.hex ./
+  cp -f $QSYS_SIMDIR/submodules/sine_nco_ii_0_cos_c.hex ./
+  cp -f $QSYS_SIMDIR/submodules/sine_nco_ii_0_sin_f.hex ./
+  cp -f $QSYS_SIMDIR/submodules/sine_nco_ii_0_cos_f.hex ./
 fi
 
 # ----------------------------------------

@@ -2,7 +2,7 @@ set_global_assignment -entity "sine" -library "sine" -name IP_TOOL_NAME "Qsys"
 set_global_assignment -entity "sine" -library "sine" -name IP_TOOL_VERSION "15.1"
 set_global_assignment -entity "sine" -library "sine" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "sine" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../sine.sopcinfo"]
-set_global_assignment -entity "sine" -library "sine" -name SLD_INFO "QSYS_NAME sine HAS_SOPCINFO 1 GENERATION_ID 1498309501"
+set_global_assignment -entity "sine" -library "sine" -name SLD_INFO "QSYS_NAME sine HAS_SOPCINFO 1 GENERATION_ID 1499946539"
 set_global_assignment -library "sine" -name MISC_FILE [file join $::quartus(qip_path) "../sine.cmp"]
 set_global_assignment -library "sine" -name SLD_FILE [file join $::quartus(qip_path) "sine.debuginfo"]
 set_global_assignment -entity "sine" -library "sine" -name IP_TARGETED_DEVICE_FAMILY "Cyclone V"
@@ -15,7 +15,7 @@ set_global_assignment -entity "sine" -library "sine" -name IP_COMPONENT_DISPLAY_
 set_global_assignment -entity "sine" -library "sine" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "sine" -library "sine" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "sine" -library "sine" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "sine" -library "sine" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTQ5ODMwOTUwMQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "sine" -library "sine" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTQ5OTk0NjUzOQ==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "sine" -library "sine" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "sine" -library "sine" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U="
 set_global_assignment -entity "sine" -library "sine" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -30,10 +30,11 @@ set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT
 set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_VERSION "MTUuMQ=="
 set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_DESCRIPTION "QWx0ZXJhIE51bWVyaWNhbGx5IENvbnRyb2xsZWQgT3NjaWxsYXRvcg=="
 set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "ZGVzaWduX2Vudg==::TkFUSVZF::ZGVzaWduX2Vudg=="
-set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "YXJjaA==::bGFyZ2Vfcm9t::R2VuZXJhdGlvbiBBbGdvcml0aG0="
+set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "YXJjaA==::dHJpZw==::R2VuZXJhdGlvbiBBbGdvcml0aG0="
 set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "d2FudF9zaW5fYW5kX2Nvcw==::c2luZ2xlX291dHB1dA==::T3V0cHV0cw=="
 set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "bnVtY2g=::MQ==::TnVtYmVyIG9mIENoYW5uZWxz"
 set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "bnVtYmE=::MQ==::TnVtYmVyIG9mIEJhbmRz"
+set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "dXNlX2RlZGljYXRlZF9tdWx0aXBsaWVycw==::dHJ1ZQ==::VXNlIGRlZGljYXRlZCBtdWx0aXBsaWVycw=="
 set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "c2VsZWN0ZWRfZGV2aWNlX2ZhbWlseQ==::Q3ljbG9uZSBW::RGV2aWNlIEZhbWlseQ=="
 set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "YXBy::MzI=::UGhhc2UgQWNjdW11bGF0b3IgUHJlY2lzaW9u"
 set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "YXByaQ==::MTY=::QW5ndWxhciBSZXNvbHV0aW9u"
@@ -57,18 +58,26 @@ set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT
 set_global_assignment -entity "sine_nco_ii_0" -library "sine" -name IP_COMPONENT_PARAMETER "aHlwZXJfb3B0X3NlbGVjdA==::ZmFsc2U=::T3B0aW1pemUgZm9yIFN0cmF0aXggMTA="
 
 set_global_assignment -library "sine" -name VHDL_FILE [file join $::quartus(qip_path) "sine.vhd"]
-set_global_assignment -library "sine" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/sine_nco_ii_0_sin.hex"]
+set_global_assignment -library "sine" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/sine_nco_ii_0_sin_c.hex"]
+set_global_assignment -library "sine" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/sine_nco_ii_0_cos_c.hex"]
+set_global_assignment -library "sine" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/sine_nco_ii_0_sin_f.hex"]
+set_global_assignment -library "sine" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/sine_nco_ii_0_cos_f.hex"]
 set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sine_nco_ii_0.v"]
+set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/mac_i_lpmd.v"]
 set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_fxx.v"]
-set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_mob_rw.v"]
-set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_isdr.v"]
 set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_apr_dxx.v"]
-set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_pxx.v"]
+set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_mob_w.v"]
 set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_dxx_g.v"]
-set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_dxx.v"]
-set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_gal.v"]
+set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_as_m_dp_cen.v"]
 set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_as_m_cen.v"]
 set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_altqmcpipe.v"]
+set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_derot.v"]
+set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_isdr.v"]
+set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_nco_pxx.v"]
+set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/las.v"]
+set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_dxx.v"]
+set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lmsd.v"]
+set_global_assignment -library "sine" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/asj_gam_dp.v"]
 set_global_assignment -library "sine" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/asj_altq.ocp"]
 set_global_assignment -library "sine" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/asj_altqmcash.ocp"]
 set_global_assignment -library "sine" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/asj_altqmcpipe.ocp"]
