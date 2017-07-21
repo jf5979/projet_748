@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/sine_nco_ii_0_sin_c.hex"
+   type="HEX"
+   library="nco_ii_0" />
+ <file
+   path="simulation/submodules/sine_nco_ii_0_cos_c.hex"
+   type="HEX"
+   library="nco_ii_0" />
+ <file
+   path="simulation/submodules/sine_nco_ii_0_sin_f.hex"
+   type="HEX"
+   library="nco_ii_0" />
+ <file
+   path="simulation/submodules/sine_nco_ii_0_cos_f.hex"
+   type="HEX"
+   library="nco_ii_0" />
+ <file
+   path="simulation/submodules/sine_nco_ii_0_tb.vhd"
+   type="OTHER"
+   library="nco_ii_0" />
+ <file
+   path="simulation/submodules/sine_nco_ii_0.vho"
+   type="VHDL"
+   library="nco_ii_0" />
+ <file path="simulation/sine.vhd" type="VHDL" />
+ <topLevel name="sine" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

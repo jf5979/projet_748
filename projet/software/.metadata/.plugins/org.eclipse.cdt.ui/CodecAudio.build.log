@@ -1,9 +1,21 @@
-17:45:41 **** Incremental Build of configuration Nios II for project CodecAudio ****
+21:11:12 **** Incremental Build of configuration Nios II for project CodecAudio ****
 make all 
 Info: Building ../CodecAudio_bsp/
 C:/altera_lite/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../CodecAudio_bsp/
-[BSP build complete]
-[CodecAudio build complete]
+Makefile not up to date.
+../../CodecAudio.sopcinfo has been modified since the BSP was generated.
 
-17:45:42 Build Finished (took 922ms)
+Generate the BSP to update the Makefile, and then build again.
+
+To generate from Eclipse:
+ 1. Right-click the BSP project.
+ 2. In the Nios II Menu, click Generate BSP.
+
+To generate from the command line:
+ nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>
+
+make[1]: *** [public.mk] Error 1
+make: *** [../CodecAudio_bsp/-recurs-make-lib] Error 2
+
+21:11:12 Build Finished (took 366ms)
 

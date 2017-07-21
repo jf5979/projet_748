@@ -49,7 +49,7 @@ module CodecAudio_sysid (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1500225341 : 1;
+  assign readdata = address ? 1500612485 : 1;
 
 endmodule
 

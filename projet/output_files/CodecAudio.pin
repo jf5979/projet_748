@@ -89,7 +89,7 @@ RESERVED_INPUT               : A9        :        :                   :         
 RESERVED_INPUT               : A10       :        :                   :         : 8A        :                
 RESERVED_INPUT               : A11       :        :                   :         : 8A        :                
 GND                          : A12       : gnd    :                   :         :           :                
-RESERVED_INPUT               : A13       :        :                   :         : 8A        :                
+DATA_FROM_ACC_MAT[12]        : A13       : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : A14       :        :                   :         : 7D        :                
 RESERVED_INPUT               : A15       :        :                   :         : 7D        :                
 RESERVED_INPUT               : A16       :        :                   :         : 7C        :                
@@ -117,16 +117,16 @@ VCCA_FPLL                    : AA8       : power  :                   : 2.5V    
 GND                          : AA9       : gnd    :                   :         :           :                
 VCCPD3A                      : AA10      : power  :                   : 2.5V    : 3A        :                
 GND                          : AA11      : gnd    :                   :         :           :                
-DATA_TO_ACC_MAT[1]           : AA12      : output : 2.5 V             :         : 3A        : N              
-RESERVED_INPUT               : AA13      :        :                   :         : 3B        :                
+RESERVED_INPUT               : AA12      :        :                   :         : 3A        :                
+parametre[3]                 : AA13      : input  : 2.5 V             :         : 3B        : N              
 RESET                        : AA14      : input  : 2.5 V             :         : 3B        : Y              
-DATA_FROM_ACC_MAT[9]         : AA15      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AA15      :        :                   :         : 3B        :                
 RESERVED_INPUT               : AA16      :        :                   :         : 4A        :                
 VCCIO4A                      : AA17      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT               : AA18      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AA19      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AA20      :        :                   :         : 4A        :                
-RESERVED_INPUT               : AA21      :        :                   :         : 4A        :                
+DATA_TO_ACC_MAT[4]           : AA21      : output : 2.5 V             :         : 4A        : N              
 GND                          : AA22      : gnd    :                   :         :           :                
 VCCPGM                       : AA23      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 RESERVED_INPUT               : AA24      :        :                   :         : 5A        :                
@@ -148,9 +148,9 @@ altera_reserved_tdo          : AB9       : output : 2.5 V             :         
 VCCPGM                       : AB10      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 VCC_AUX                      : AB11      : power  :                   : 2.5V    :           :                
 TOGGLE_ACCMAT                : AB12      : input  : 2.5 V             :         : 3A        : Y              
-DATA_FROM_ACC_MAT[21]        : AB13      : input  : 2.5 V             :         : 3B        : N              
+types[1]                     : AB13      : input  : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AB14      : power  :                   : 2.5V    : 3B        :                
-DATA_FROM_ACC_MAT[4]         : AB15      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AB15      :        :                   :         : 3B        :                
 VCC_AUX                      : AB16      : power  :                   : 2.5V    :           :                
 RESERVED_INPUT               : AB17      :        :                   :         : 4A        :                
 VCCPD3B4A                    : AB18      : power  :                   : 2.5V    : 3B, 4A    :                
@@ -162,8 +162,8 @@ RESERVED_INPUT               : AB23      :        :                   :         
 VCCIO5A                      : AB24      : power  :                   : 2.5V    : 5A        :                
 RESERVED_INPUT               : AB25      :        :                   :         : 5A        :                
 RESERVED_INPUT               : AB26      :        :                   :         : 5A        :                
-RESERVED_INPUT               : AB27      :        :                   :         : 5B        :                
-RESERVED_INPUT               : AB28      :        :                   :         : 5B        :                
+DATA_FROM_ACC_MAT[11]        : AB27      : input  : 2.5 V             :         : 5B        : N              
+DATA_FROM_ACC_MAT[18]        : AB28      : input  : 2.5 V             :         : 5B        : N              
 GND                          : AB29      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AB30      :        :                   :         : 5B        :                
 GND                          : AC1       : gnd    :                   :         :           :                
@@ -177,9 +177,9 @@ GND                          : AC8       : gnd    :                   :         
 RESERVED_INPUT               : AC9       :        :                   :         : 3A        :                
 VCCPD3A                      : AC10      : power  :                   : 2.5V    : 3A        :                
 VCCIO3A                      : AC11      : power  :                   : 2.5V    : 3A        :                
-DATA_TO_ACC_MAT[4]           : AC12      : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT               : AC12      :        :                   :         : 3A        :                
 VCCPD3B4A                    : AC13      : power  :                   : 2.5V    : 3B, 4A    :                
-DATA_FROM_ACC_MAT[2]         : AC14      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AC14      :        :                   :         : 3B        :                
 VCCPD3B4A                    : AC15      : power  :                   : 2.5V    : 3B, 4A    :                
 GND                          : AC16      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AC17      : power  :                   : 2.5V    : 3B, 4A    :                
@@ -187,13 +187,13 @@ RESERVED_INPUT               : AC18      :        :                   :         
 VCCPD3B4A                    : AC19      : power  :                   : 2.5V    : 3B, 4A    :                
 RESERVED_INPUT               : AC20      :        :                   :         : 4A        :                
 VCCIO4A                      : AC21      : power  :                   : 2.5V    : 4A        :                
-RESERVED_INPUT               : AC22      :        :                   :         : 4A        :                
+DATA_TO_ACC_MAT[5]           : AC22      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT               : AC23      :        :                   :         : 4A        :                
 VREFB5AN0                    : AC24      : power  :                   :         : 5A        :                
 RESERVED_INPUT               : AC25      :        :                   :         : 5A        :                
 GND                          : AC26      : gnd    :                   :         :           :                
-RESERVED_INPUT               : AC27      :        :                   :         : 5A        :                
-RESERVED_INPUT               : AC28      :        :                   :         : 5B        :                
+DATA_FROM_ACC_MAT[8]         : AC27      : input  : 2.5 V             :         : 5A        : N              
+DATA_FROM_ACC_MAT[1]         : AC28      : input  : 2.5 V             :         : 5B        : N              
 RESERVED_INPUT               : AC29      :        :                   :         : 5B        :                
 RESERVED_INPUT               : AC30      :        :                   :         : 5B        :                
 GND                          : AD1       : gnd    :                   :         :           :                
@@ -207,9 +207,9 @@ VCCIO3A                      : AD8       : power  :                   : 2.5V    
 RESERVED_INPUT               : AD9       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AD10      :        :                   :         : 3A        :                
 RESERVED_INPUT               : AD11      :        :                   :         : 3A        :                
-DATA_TO_ACC_MAT[17]          : AD12      : output : 2.5 V             :         : 3A        : N              
+DATA_TO_ACC_MAT[1]           : AD12      : output : 2.5 V             :         : 3A        : N              
 VCCIO3B                      : AD13      : power  :                   : 2.5V    : 3B        :                
-DATA_TO_ACC_MAT[15]          : AD14      : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AD14      :        :                   :         : 3B        :                
 DNU                          : AD15      :        :                   :         :           :                
 VCCPD3B4A                    : AD16      : power  :                   : 2.5V    : 3B, 4A    :                
 RESERVED_INPUT               : AD17      :        :                   :         : 4A        :                
@@ -221,7 +221,7 @@ VCC_AUX                      : AD22      : power  :                   : 2.5V    
 GND                          : AD23      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AD24      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AD25      :        :                   :         : 5A        :                
-RESERVED_INPUT               : AD26      :        :                   :         : 5A        :                
+DATA_FROM_ACC_MAT[21]        : AD26      : input  : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT               : AD27      :        :                   :         : 5A        :                
 VCCIO5A                      : AD28      : power  :                   : 2.5V    : 5A        :                
 RESERVED_INPUT               : AD29      :        :                   :         : 5B        :                
@@ -234,12 +234,12 @@ AS_DATA1, DATA1              : AE5       :        :                   :         
 AS_DATA0, ASDO, DATA0        : AE6       :        :                   :         : 3A        :                
 PS2_DAT                      : AE7       : bidir  : 2.5 V             :         : 3A        : Y              
 AS_DATA2, DATA2              : AE8       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AE9       :        :                   :         : 3A        :                
+led_status                   : AE9       : output : 2.5 V             :         : 3A        : N              
 GND                          : AE10      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AE11      :        :                   :         : 3A        :                
 RESERVED_INPUT               : AE12      :        :                   :         : 3A        :                
-RESERVED_INPUT               : AE13      :        :                   :         : 3B        :                
-DATA_TO_ACC_MAT[16]          : AE14      : output : 2.5 V             :         : 3B        : N              
+parametre[2]                 : AE13      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AE14      :        :                   :         : 3B        :                
 VCCIO3B                      : AE15      : power  :                   : 2.5V    : 3B        :                
 RESERVED_INPUT               : AE16      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AE17      :        :                   :         : 4A        :                
@@ -261,16 +261,16 @@ GND                          : AF2       : gnd    :                   :         
 GND                          : AF3       : gnd    :                   :         :           :                
 RESERVED_INPUT               : AF4       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AF5       :        :                   :         : 3A        :                
-DATA_FROM_ACC_MAT[14]        : AF6       : input  : 2.5 V             :         : 3A        : N              
+DATA_TO_ACC_MAT[3]           : AF6       : output : 2.5 V             :         : 3A        : N              
 VCCIO3A                      : AF7       : power  :                   : 2.5V    : 3A        :                
 RESERVED_INPUT               : AF8       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AF9       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AF10      :        :                   :         : 3A        :                
-DATA_TO_ACC_MAT[10]          : AF11      : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AF11      :        :                   :         : 3B        :                
 GND                          : AF12      : gnd    :                   :         :           :                
-DATA_TO_ACC_MAT[7]           : AF13      : output : 2.5 V             :         : 3B        : N              
+parametre[1]                 : AF13      : input  : 2.5 V             :         : 3B        : N              
 CLOCK_50                     : AF14      : input  : 2.5 V             :         : 3B        : Y              
-DATA_TO_ACC_MAT[11]          : AF15      : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AF15      :        :                   :         : 3B        :                
 RESERVED_INPUT               : AF16      :        :                   :         : 4A        :                
 GND                          : AF17      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AF18      :        :                   :         : 4A        :                
@@ -279,30 +279,30 @@ RESERVED_INPUT               : AF20      :        :                   :         
 RESERVED_INPUT               : AF21      :        :                   :         : 4A        :                
 VCCIO4A                      : AF22      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT               : AF23      :        :                   :         : 4A        :                
-RESERVED_INPUT               : AF24      :        :                   :         : 4A        :                
-RESERVED_INPUT               : AF25      :        :                   :         : 4A        :                
+effects[0]                   : AF24      : input  : 2.5 V             :         : 4A        : N              
+DATA_TO_ACC_MAT[0]           : AF25      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT               : AF26      :        :                   :         : 4A        :                
 GND                          : AF27      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AF28      :        :                   :         : 5A        :                
 RESERVED_INPUT               : AF29      :        :                   :         : 5A        :                
 RESERVED_INPUT               : AF30      :        :                   :         : 5A        :                
-DATA_TO_ACC_MAT[18]          : AG1       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT               : AG1       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AG2       :        :                   :         : 3A        :                
-pll_locked                   : AG3       : output : 2.5 V             :         : 3A        : N              
+effects[1]                   : AG3       : input  : 2.5 V             :         : 3A        : N              
 VCCIO3A                      : AG4       : power  :                   : 2.5V    : 3A        :                
 RESERVED_INPUT               : AG5       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AG6       :        :                   :         : 3A        :                
-DATA_TO_ACC_MAT[3]           : AG7       : output : 2.5 V             :         : 3A        : N              
+DATA_TO_ACC_MAT[11]          : AG7       : output : 2.5 V             :         : 3A        : N              
 RESERVED_INPUT               : AG8       :        :                   :         : 3A        :                
 GND                          : AG9       : gnd    :                   :         :           :                
-DATA_FROM_ACC_MAT[22]        : AG10      : input  : 2.5 V             :         : 3B        : N              
-DATA_FROM_ACC_MAT[16]        : AG11      : input  : 2.5 V             :         : 3B        : N              
-DATA_TO_ACC_MAT[9]           : AG12      : output : 2.5 V             :         : 3B        : N              
-DATA_TO_ACC_MAT[13]          : AG13      : output : 2.5 V             :         : 3B        : N              
+enable                       : AG10      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AG11      :        :                   :         : 3B        :                
+DATA_TO_ACC_MAT[8]           : AG12      : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AG13      :        :                   :         : 3B        :                
 GND                          : AG14      : gnd    :                   :         :           :                
-DATA_FROM_ACC_MAT[20]        : AG15      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AG15      :        :                   :         : 3B        :                
 RESERVED_INPUT               : AG16      :        :                   :         : 4A        :                
-RESERVED_INPUT               : AG17      :        :                   :         : 4A        :                
+DATA_FROM_ACC_MAT[17]        : AG17      : input  : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT               : AG18      :        :                   :         : 4A        :                
 VCCIO4A                      : AG19      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT               : AG20      :        :                   :         : 4A        :                
@@ -317,22 +317,22 @@ RESERVED_INPUT               : AG28      :        :                   :         
 VCCIO5A                      : AG29      : power  :                   : 2.5V    : 5A        :                
 RESERVED_INPUT               : AG30      :        :                   :         : 5A        :                
 GND                          : AH1       : gnd    :                   :         :           :                
-RESERVED_INPUT               : AH2       :        :                   :         : 3A        :                
+DATA_TO_ACC_MAT[9]           : AH2       : output : 2.5 V             :         : 3A        : N              
 RESERVED_INPUT               : AH3       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AH4       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AH5       :        :                   :         : 3A        :                
 GND                          : AH6       : gnd    :                   :         :           :                
-DATA_FROM_ACC_MAT[18]        : AH7       : input  : 2.5 V             :         : 3B        : N              
-DATA_FROM_ACC_MAT[7]         : AH8       : input  : 2.5 V             :         : 3B        : N              
-DATA_FROM_ACC_MAT[17]        : AH9       : input  : 2.5 V             :         : 3B        : N              
-DATA_FROM_ACC_MAT[5]         : AH10      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AH7       :        :                   :         : 3B        :                
+RESERVED_INPUT               : AH8       :        :                   :         : 3B        :                
+RESERVED_INPUT               : AH9       :        :                   :         : 3B        :                
+RESERVED_INPUT               : AH10      :        :                   :         : 3B        :                
 GND                          : AH11      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AH12      :        :                   :         : 3B        :                
-DATA_FROM_ACC_MAT[0]         : AH13      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AH13      :        :                   :         : 3B        :                
 DATA_FROM_ACC_MAT[10]        : AH14      : input  : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT               : AH15      :        :                   :         : 3B        :                
 VCCIO4A                      : AH16      : power  :                   : 2.5V    : 4A        :                
-DATA_FROM_ACC_MAT[6]         : AH17      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT               : AH17      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AH18      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AH19      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AH20      :        :                   :         : 4A        :                
@@ -340,24 +340,24 @@ GND                          : AH21      : gnd    :                   :         
 RESERVED_INPUT               : AH22      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AH23      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AH24      :        :                   :         : 4A        :                
-RESERVED_INPUT               : AH25      :        :                   :         : 4A        :                
+DATA_FROM_ACC_MAT[5]         : AH25      : input  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AH26      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT               : AH27      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AH28      :        :                   :         : 5A        :                
 RESERVED_INPUT               : AH29      :        :                   :         : 5A        :                
-RESERVED_INPUT               : AH30      :        :                   :         : 5A        :                
+DATA_TO_ACC_MAT[14]          : AH30      : output : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT               : AJ1       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AJ2       :        :                   :         : 3A        :                
 GND                          : AJ3       : gnd    :                   :         :           :                
-DATA_TO_ACC_MAT[6]           : AJ4       : output : 2.5 V             :         : 3B        : N              
-DATA_TO_ACC_MAT[8]           : AJ5       : output : 2.5 V             :         : 3B        : N              
-DATA_TO_ACC_MAT[0]           : AJ6       : output : 2.5 V             :         : 3B        : N              
-DATA_TO_ACC_MAT[12]          : AJ7       : output : 2.5 V             :         : 3B        : N              
+parametre[4]                 : AJ4       : input  : 2.5 V             :         : 3B        : N              
+DATA_FROM_ACC_MAT[13]        : AJ5       : input  : 2.5 V             :         : 3B        : N              
+DATA_TO_ACC_MAT[15]          : AJ6       : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AJ7       :        :                   :         : 3B        :                
 VCCIO3B                      : AJ8       : power  :                   : 2.5V    : 3B        :                
-DATA_FROM_ACC_MAT[12]        : AJ9       : input  : 2.5 V             :         : 3B        : N              
-DATA_FROM_ACC_MAT[3]         : AJ10      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AJ9       :        :                   :         : 3B        :                
+RESERVED_INPUT               : AJ10      :        :                   :         : 3B        :                
 RESERVED_INPUT               : AJ11      :        :                   :         : 3B        :                
-DATA_FROM_ACC_MAT[8]         : AJ12      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AJ12      :        :                   :         : 3B        :                
 VCCIO3B                      : AJ13      : power  :                   : 2.5V    : 3B        :                
 RESERVED_INPUT               : AJ14      :        :                   :         : 3B        :                
 VREFB3BN0                    : AJ15      : power  :                   :         : 3B        :                
@@ -370,51 +370,51 @@ RESERVED_INPUT               : AJ21      :        :                   :         
 RESERVED_INPUT               : AJ22      :        :                   :         : 4A        :                
 VCCIO4A                      : AJ23      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT               : AJ24      :        :                   :         : 4A        :                
-RESERVED_INPUT               : AJ25      :        :                   :         : 4A        :                
+DATA_FROM_ACC_MAT[0]         : AJ25      : input  : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT               : AJ26      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AJ27      :        :                   :         : 4A        :                
 GND                          : AJ28      : gnd    :                   :         :           :                
-RESERVED_INPUT               : AJ29      :        :                   :         : 5A        :                
+DATA_FROM_ACC_MAT[4]         : AJ29      : input  : 2.5 V             :         : 5A        : N              
 GND                          : AJ30      : gnd    :                   :         :           :                
-DATA_TO_ACC_MAT[14]          : AK2       : output : 2.5 V             :         : 3B        : N              
-DATA_FROM_ACC_MAT[11]        : AK3       : input  : 2.5 V             :         : 3B        : N              
-DATA_TO_ACC_MAT[5]           : AK4       : output : 2.5 V             :         : 3B        : N              
+types[0]                     : AK2       : input  : 2.5 V             :         : 3B        : N              
+parametre[0]                 : AK3       : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AK4       :        :                   :         : 3B        :                
 GND                          : AK5       : gnd    :                   :         :           :                
-DATA_FROM_ACC_MAT[23]        : AK6       : input  : 2.5 V             :         : 3B        : N              
-DATA_TO_ACC_MAT[19]          : AK7       : output : 2.5 V             :         : 3B        : N              
-DATA_FROM_ACC_MAT[1]         : AK8       : input  : 2.5 V             :         : 3B        : N              
-DATA_TO_ACC_MAT[2]           : AK9       : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AK6       :        :                   :         : 3B        :                
+RESERVED_INPUT               : AK7       :        :                   :         : 3B        :                
+RESERVED_INPUT               : AK8       :        :                   :         : 3B        :                
+RESERVED_INPUT               : AK9       :        :                   :         : 3B        :                
 VCCIO3B                      : AK10      : power  :                   : 2.5V    : 3B        :                
-DATA_FROM_ACC_MAT[15]        : AK11      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT               : AK11      :        :                   :         : 3B        :                
 RESERVED_INPUT               : AK12      :        :                   :         : 3B        :                
-DATA_FROM_ACC_MAT[13]        : AK13      : input  : 2.5 V             :         : 3B        : N              
+DATA_FROM_ACC_MAT[2]         : AK13      : input  : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT               : AK14      :        :                   :         : 3B        :                
 GND                          : AK15      : gnd    :                   :         :           :                
-RESERVED_INPUT               : AK16      :        :                   :         : 4A        :                
+DATA_FROM_ACC_MAT[6]         : AK16      : input  : 2.5 V             :         : 4A        : N              
 VREFB4AN0                    : AK17      : power  :                   :         : 4A        :                
 RESERVED_INPUT               : AK18      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AK19      :        :                   :         : 4A        :                
 VCCIO4A                      : AK20      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT               : AK21      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AK22      :        :                   :         : 4A        :                
-RESERVED_INPUT               : AK23      :        :                   :         : 4A        :                
+DATA_TO_ACC_MAT[13]          : AK23      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT               : AK24      :        :                   :         : 4A        :                
 GND                          : AK25      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AK26      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AK27      :        :                   :         : 4A        :                
 RESERVED_INPUT               : AK28      :        :                   :         : 4A        :                
-RESERVED_INPUT               : AK29      :        :                   :         : 4A        :                
+DATA_TO_ACC_MAT[16]          : AK29      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT               : B1        :        :                   :         : 8A        :                
 RESERVED_INPUT               : B2        :        :                   :         : 8A        :                
 RESERVED_INPUT               : B3        :        :                   :         : 8A        :                
 VCCIO8A                      : B4        : power  :                   : 2.5V    : 8A        :                
 RESERVED_INPUT               : B5        :        :                   :         : 8A        :                
 RESERVED_INPUT               : B6        :        :                   :         : 8A        :                
-RESERVED_INPUT               : B7        :        :                   :         : 8A        :                
+DATA_TO_ACC_MAT[10]          : B7        : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : B8        :        :                   :         : 8A        :                
 GND                          : B9        : gnd    :                   :         :           :                
 VREFB8AN0                    : B10       : power  :                   :         : 8A        :                
-RESERVED_INPUT               : B11       :        :                   :         : 8A        :                
+DATA_TO_ACC_MAT[19]          : B11       : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : B12       :        :                   :         : 8A        :                
 RESERVED_INPUT               : B13       :        :                   :         : 8A        :                
 GND                          : B14       : gnd    :                   :         :           :                
@@ -436,11 +436,11 @@ GND                          : B29       : gnd    :                   :         
 RESERVED_INPUT               : B30       :        :                   :         : 6A        :                
 GND                          : C1        : gnd    :                   :         :           :                
 RESERVED_INPUT               : C2        :        :                   :         : 8A        :                
-RESERVED_INPUT               : C3        :        :                   :         : 8A        :                
+DATA_FROM_ACC_MAT[20]        : C3        : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : C4        :        :                   :         : 8A        :                
 RESERVED_INPUT               : C5        :        :                   :         : 8A        :                
 GND                          : C6        : gnd    :                   :         :           :                
-RESERVED_INPUT               : C7        :        :                   :         : 8A        :                
+DATA_TO_ACC_MAT[2]           : C7        : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : C8        :        :                   :         : 8A        :                
 RESERVED_INPUT               : C9        :        :                   :         : 8A        :                
 RESERVED_INPUT               : C10       :        :                   :         : 8A        :                
@@ -467,15 +467,15 @@ RESERVED_INPUT               : C30       :        :                   :         
 RESERVED_INPUT               : D1        :        :                   :         : 8A        :                
 RESERVED_INPUT               : D2        :        :                   :         : 8A        :                
 GND                          : D3        : gnd    :                   :         :           :                
-RESERVED_INPUT               : D4        :        :                   :         : 8A        :                
+pll_locked                   : D4        : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : D5        :        :                   :         : 8A        :                
-RESERVED_INPUT               : D6        :        :                   :         : 8A        :                
+DATA_FROM_ACC_MAT[23]        : D6        : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : D7        :        :                   :         : 8A        :                
 VCCIO8A                      : D8        : power  :                   : 2.5V    : 8A        :                
-RESERVED_INPUT               : D9        :        :                   :         : 8A        :                
+DATA_FROM_ACC_MAT[15]        : D9        : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : D10       :        :                   :         : 8A        :                
 RESERVED_INPUT               : D11       :        :                   :         : 8A        :                
-RESERVED_INPUT               : D12       :        :                   :         : 8A        :                
+DATA_FROM_ACC_MAT[22]        : D12       : input  : 2.5 V             :         : 8A        : N              
 GND                          : D13       : gnd    :                   :         :           :                
 RESERVED_INPUT               : D14       :        :                   :         : 7D        :                
 RESERVED_INPUT               : D15       :        :                   :         : 7D        :                
@@ -497,15 +497,15 @@ RESERVED_INPUT               : D30       :        :                   :         
 RESERVED_INPUT               : E1        :        :                   :         : 8A        :                
 RESERVED_INPUT               : E2        :        :                   :         : 8A        :                
 RESERVED_INPUT               : E3        :        :                   :         : 8A        :                
-RESERVED_INPUT               : E4        :        :                   :         : 8A        :                
+DATA_FROM_ACC_MAT[3]         : E4        : input  : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : E5        : power  :                   : 2.5V    : 8A        :                
 RESERVED_INPUT               : E6        :        :                   :         : 8A        :                
-RESERVED_INPUT               : E7        :        :                   :         : 8A        :                
+DATA_TO_ACC_MAT[17]          : E7        : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : E8        :        :                   :         : 8A        :                
 RESERVED_INPUT               : E9        :        :                   :         : 8A        :                
 GND                          : E10       : gnd    :                   :         :           :                
 RESERVED_INPUT               : E11       :        :                   :         : 8A        :                
-RESERVED_INPUT               : E12       :        :                   :         : 8A        :                
+DATA_TO_ACC_MAT[18]          : E12       : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : E13       :        :                   :         : 8A        :                
 RESERVED_INPUT               : E14       :        :                   :         : 7D        :                
 VCCIO7D_HPS                  : E15       : power  :                   : 2.5V    : 7D        :                
@@ -532,8 +532,8 @@ GND                          : F5        : gnd    :                   :         
 RESERVED_INPUT               : F6        :        :                   :         : 8A        :                
 GND                          : F7        : gnd    :                   :         :           :                
 RESERVED_INPUT               : F8        :        :                   :         : 8A        :                
-RESERVED_INPUT               : F9        :        :                   :         : 8A        :                
-RESERVED_INPUT               : F10       :        :                   :         : 8A        :                
+DATA_FROM_ACC_MAT[7]         : F9        : input  : 2.5 V             :         : 8A        : N              
+DATA_FROM_ACC_MAT[9]         : F10       : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : F11       :        :                   :         : 8A        :                
 VCCIO8A                      : F12       : power  :                   : 2.5V    : 8A        :                
 RESERVED_INPUT               : F13       :        :                   :         : 8A        :                
@@ -564,7 +564,7 @@ AUD_XCK                      : G7        : output : 2.5 V             :         
 RESERVED_INPUT               : G8        :        :                   :         : 8A        :                
 VCCIO8A                      : G9        : power  :                   : 2.5V    : 8A        :                
 RESERVED_INPUT               : G10       :        :                   :         : 8A        :                
-RESERVED_INPUT               : G11       :        :                   :         : 8A        :                
+DATA_FROM_ACC_MAT[16]        : G11       : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : G12       :        :                   :         : 8A        :                
 RESERVED_INPUT               : G13       :        :                   :         : 8A        :                
 VCCIO8A                      : G14       : power  :                   : 2.5V    : 8A        :                
@@ -596,7 +596,7 @@ VCCBAT                       : H9        : power  :                   : 1.2V    
 VCC_AUX                      : H10       : power  :                   : 2.5V    :           :                
 GND                          : H11       : gnd    :                   :         :           :                
 RESERVED_INPUT               : H12       :        :                   :         : 8A        :                
-RESERVED_INPUT               : H13       :        :                   :         : 8A        :                
+DATA_FROM_ACC_MAT[19]        : H13       : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT               : H14       :        :                   :         : 8A        :                
 RESERVED_INPUT               : H15       :        :                   :         : 8A        :                
 VCCIO7D_HPS                  : H16       : power  :                   : 2.5V    : 7D        :                
@@ -627,7 +627,7 @@ RESERVED_INPUT               : J10       :        :                   :         
 VCCPGM                       : J11       : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 FPGA_I2C_SCLK                : J12       : output : 2.5 V             :         : 8A        : Y              
 VCCIO8A                      : J13       : power  :                   : 2.5V    : 8A        :                
-RESERVED_INPUT               : J14       :        :                   :         : 8A        :                
+DATA_TO_ACC_MAT[7]           : J14       : output : 2.5 V             :         : 8A        : N              
 DNU                          : J15       :        :                   :         :           :                
 VCC_AUX                      : J16       : power  :                   : 2.5V    :           :                
 VCCPD7C_HPS                  : J17       : power  :                   : 2.5V    : 7C        :                
@@ -933,9 +933,9 @@ RESERVED_INPUT               : W16       :        :                   :         
 RESERVED_INPUT               : W17       :        :                   :         : 4A        :                
 GND                          : W18       : gnd    :                   :         :           :                
 RESERVED_INPUT               : W19       :        :                   :         : 4A        :                
-RESERVED_INPUT               : W20       :        :                   :         : 5A        :                
+DATA_FROM_ACC_MAT[14]        : W20       : input  : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT               : W21       :        :                   :         : 5A        :                
-DATA_FROM_ACC_MAT[19]        : W22       : input  : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT               : W22       :        :                   :         : 5A        :                
 VCCIO5A                      : W23       : power  :                   : 2.5V    : 5A        :                
 RESERVED_INPUT               : W24       :        :                   :         : 5A        :                
 RESERVED_INPUT               : W25       :        :                   :         : 5B        :                
@@ -959,12 +959,12 @@ GND                          : Y12       : gnd    :                   :         
 VCC                          : Y13       : power  :                   : 1.1V    :           :                
 GND                          : Y14       : gnd    :                   :         :           :                
 GND                          : Y15       : gnd    :                   :         :           :                
-RESERVED_INPUT               : Y16       :        :                   :         : 3B        :                
+DATA_TO_ACC_MAT[6]           : Y16       : output : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT               : Y17       :        :                   :         : 4A        :                
 RESERVED_INPUT               : Y18       :        :                   :         : 4A        :                
 RESERVED_INPUT               : Y19       :        :                   :         : 4A        :                
 GND                          : Y20       : gnd    :                   :         :           :                
-RESERVED_INPUT               : Y21       :        :                   :         : 5A        :                
+DATA_TO_ACC_MAT[12]          : Y21       : output : 2.5 V             :         : 5A        : N              
 VCCA_FPLL                    : Y22       : power  :                   : 2.5V    :           :                
 RESERVED_INPUT               : Y23       :        :                   :         : 5A        :                
 RESERVED_INPUT               : Y24       :        :                   :         : 5A        :                
