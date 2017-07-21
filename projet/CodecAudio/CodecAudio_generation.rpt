@@ -1,5 +1,220 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\Users\JF\Drive\ETS\E2017\ELE748\Projet\code\projet\CodecAudio.qsys --simulation=VHDL --output-directory=C:\Users\JF\Drive\ETS\E2017\ELE748\Projet\code\projet\CodecAudio\simulation --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading projet/CodecAudio.qsys
+Progress: Reading input file
+Progress: Adding DataFromAccMat [altera_avalon_pio 15.1]
+Progress: Parameterizing module DataFromAccMat
+Progress: Adding DataToAccMat [altera_avalon_pio 15.1]
+Progress: Parameterizing module DataToAccMat
+Progress: Adding ToggleAccMat [altera_avalon_pio 15.1]
+Progress: Parameterizing module ToggleAccMat
+Progress: Adding audio [altera_up_avalon_audio 15.1]
+Progress: Parameterizing module audio
+Progress: Adding audio_and_video_config [altera_up_avalon_audio_and_video_config 15.1]
+Progress: Parameterizing module audio_and_video_config
+Progress: Adding clk_0 [clock_source 15.1]
+Progress: Parameterizing module clk_0
+Progress: Adding cpu [altera_nios2_gen2 15.1]
+Progress: Parameterizing module cpu
+Progress: Adding dac_pll [altera_up_avalon_audio_pll 15.1]
+Progress: Parameterizing module dac_pll
+Progress: Adding dacchip_pll [altera_up_avalon_audio_pll 15.1]
+Progress: Parameterizing module dacchip_pll
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 15.1]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding onchipmem [altera_avalon_onchip_memory2 15.1]
+Progress: Parameterizing module onchipmem
+Progress: Adding pll_0 [altera_pll 15.1]
+Progress: Parameterizing module pll_0
+Progress: Adding ps2 [altera_up_avalon_ps2 15.1]
+Progress: Parameterizing module ps2
+Progress: Adding sysid [altera_avalon_sysid_qsys 15.1]
+Progress: Parameterizing module sysid
+Progress: Adding timer0 [altera_avalon_timer 15.1]
+Progress: Parameterizing module timer0
+Progress: Adding timer1 [altera_avalon_timer 15.1]
+Progress: Parameterizing module timer1
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: CodecAudio.DataFromAccMat: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: CodecAudio.ToggleAccMat: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: CodecAudio.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: CodecAudio.pll_0: Able to implement PLL with user settings
+Info: CodecAudio.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: CodecAudio.sysid: Time stamp will be automatically updated when this component is generated.
+Info: CodecAudio: Generating CodecAudio "CodecAudio" for SIM_VHDL
+Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
+Info: DataFromAccMat: Starting RTL generation for module 'CodecAudio_DataFromAccMat'
+Info: DataFromAccMat:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=CodecAudio_DataFromAccMat --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0001_DataFromAccMat_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --vhdl --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0001_DataFromAccMat_gen//CodecAudio_DataFromAccMat_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0001_DataFromAccMat_gen/  ]
+Info: DataFromAccMat: Done RTL generation for module 'CodecAudio_DataFromAccMat'
+Info: DataFromAccMat: "CodecAudio" instantiated altera_avalon_pio "DataFromAccMat"
+Info: DataToAccMat: Starting RTL generation for module 'CodecAudio_DataToAccMat'
+Info: DataToAccMat:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=CodecAudio_DataToAccMat --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0002_DataToAccMat_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --vhdl --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0002_DataToAccMat_gen//CodecAudio_DataToAccMat_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0002_DataToAccMat_gen/  ]
+Info: DataToAccMat: Done RTL generation for module 'CodecAudio_DataToAccMat'
+Info: DataToAccMat: "CodecAudio" instantiated altera_avalon_pio "DataToAccMat"
+Info: ToggleAccMat: Starting RTL generation for module 'CodecAudio_ToggleAccMat'
+Info: ToggleAccMat:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=CodecAudio_ToggleAccMat --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0003_ToggleAccMat_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --vhdl --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0003_ToggleAccMat_gen//CodecAudio_ToggleAccMat_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0003_ToggleAccMat_gen/  ]
+Info: ToggleAccMat: Done RTL generation for module 'CodecAudio_ToggleAccMat'
+Info: ToggleAccMat: "CodecAudio" instantiated altera_avalon_pio "ToggleAccMat"
+Info: audio: Starting Generation of Audio Controller
+Warning: audio: No files generated for fileset SIM_VHDL
+Info: audio: "CodecAudio" instantiated altera_up_avalon_audio "audio"
+Info: audio_and_video_config: Starting Generation of Audio and Video Config
+Warning: audio_and_video_config: No files generated for fileset SIM_VHDL
+Info: audio_and_video_config: "CodecAudio" instantiated altera_up_avalon_audio_and_video_config "audio_and_video_config"
+Info: cpu: "CodecAudio" instantiated altera_nios2_gen2 "cpu"
+Info: dac_pll: "CodecAudio" instantiated altera_up_avalon_audio_pll "dac_pll"
+Info: jtag_uart_0: Starting RTL generation for module 'CodecAudio_jtag_uart_0'
+Info: jtag_uart_0:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=CodecAudio_jtag_uart_0 --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0006_jtag_uart_0_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --vhdl --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0006_jtag_uart_0_gen//CodecAudio_jtag_uart_0_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0006_jtag_uart_0_gen/  ]
+Info: jtag_uart_0: Done RTL generation for module 'CodecAudio_jtag_uart_0'
+Info: jtag_uart_0: "CodecAudio" instantiated altera_avalon_jtag_uart "jtag_uart_0"
+Info: onchipmem: Starting RTL generation for module 'CodecAudio_onchipmem'
+Info: onchipmem:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=CodecAudio_onchipmem --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0007_onchipmem_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --vhdl --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0007_onchipmem_gen//CodecAudio_onchipmem_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0007_onchipmem_gen/  ]
+Info: onchipmem: Done RTL generation for module 'CodecAudio_onchipmem'
+Info: onchipmem: "CodecAudio" instantiated altera_avalon_onchip_memory2 "onchipmem"
+Info: pll_0: Generating simgen model
+Info: pll_0: Info: ******************************************************************* Info: Running Quartus Prime Shell     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition     Info: Copyright (C) 1991-2015 Altera Corporation. All rights reserved.     Info: Your use of Altera Corporation's design tools, logic functions      Info: and other software and tools, and its AMPP partner logic      Info: functions, and any output files from any of the foregoing      Info: (including device programming or simulation files), and any      Info: associated documentation or information are expressly subject      Info: to the terms and conditions of the Altera Program License      Info: Subscription Agreement, the Altera Quartus Prime License Agreement,     Info: the Altera MegaCore Function License Agreement, or other      Info: applicable license agreement, including, without limitation,      Info: that your use is for the sole purpose of programming logic      Info: devices manufactured by Altera and sold by Altera or its      Info: authorized distributors.  Please refer to the applicable      Info: agreement for further details.     Info: Processing started: Fri Jul 21 00:44:21 2017 Info: Command: quartus_sh -t run_simgen_cmd.tcl Info: ******************************************************************* Info: Running Quartus Prime Analysis & Synthesis     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition     Info: Copyright (C) 1991-2015 Altera Corporation. All rights reserved.     Info: Your use of Altera Corporation's design tools, logic functions      Info: and other software and tools, and its AMPP partner logic      Info: functions, and any output files from any of the foregoing      Info: (including device programming or simulation files), and any      Info: associated documentation or information are expressly subject      Info: to the terms and conditions of the Altera Program License      Info: Subscription Agreement, the Altera Quartus Prime License Agreement,     Info: the Altera MegaCore Function License Agreement, or other      Info: applicable license agreement, including, without limitation,      Info: that your use is for the sole purpose of programming logic      Info: devices manufactured by Altera and sold by Altera or its      Info: authorized distributors.  Please refer to the applicable      Info: agreement for further details.     Info: Processing started: Fri Jul 21 00:44:24 2017 Info: Command: quartus_map CodecAudio_pll_0.qpf --simgen --ini=disable_check_quartus_compatibility_qsys_only=on --simgen_parameter=CBX_HDL_LANGUAGE=VHDL Info (20034): Auto device selection is not supported for Cyclone V device family. The default device, 5CGXFC7C7F23C8, is set. Warning (20028): Parallel compilation is not licensed and has been disabled Info (12021): Found 1 design units, including 1 entities, in source file codecaudio_pll_0.v     Info (12023): Found entity 1: CodecAudio_pll_0 File: C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0008_pll_0_gen/CodecAudio_pll_0.v Line: 2 Info (12127): Elaborating entity "CodecAudio_pll_0" for the top level hierarchy Info (12128): Elaborating entity "altera_pll" for hierarchy "altera_pll:altera_pll_i" File: C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0008_pll_0_gen/CodecAudio_pll_0.v Line: 85 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus Info (12130): Elaborated megafunction instantiation "altera_pll:altera_pll_i" File: C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0008_pll_0_gen/CodecAudio_pll_0.v Line: 85 Info (12133): Instantiated megafunction "altera_pll:altera_pll_i" with the following parameter: File: C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0008_pll_0_gen/CodecAudio_pll_0.v Line: 85     Info (12134): Parameter "fractional_vco_multiplier" = "false"     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"     Info (12134): Parameter "operation_mode" = "direct"     Info (12134): Parameter "number_of_clocks" = "1"     Info (12134): Parameter "output_clock_frequency0" = "100.000000 MHz"     Info (12134): Parameter "phase_shift0" = "0 ps"     Info (12134): Parameter "duty_cycle0" = "50"     Info (12134): Parameter "output_clock_frequency1" = "0 MHz"     Info (12134): Parameter "phase_shift1" = "0 ps"     Info (12134): Parameter "duty_cycle1" = "50"     Info (12134): Parameter "output_clock_frequency2" = "0 MHz"     Info (12134): Parameter "phase_shift2" = "0 ps"     Info (12134): Parameter "duty_cycle2" = "50"     Info (12134): Parameter "output_clock_frequency3" = "0 MHz"     Info (12134): Parameter "phase_shift3" = "0 ps"     Info (12134): Parameter "duty_cycle3" = "50"     Info (12134): Parameter "output_clock_frequency4" = "0 MHz"     Info (12134): Parameter "phase_shift4" = "0 ps"     Info (12134): Parameter "duty_cycle4" = "50"     Info (12134): Parameter "output_clock_frequency5" = "0 MHz"     Info (12134): Parameter "phase_shift5" = "0 ps"     Info (12134): Parameter "duty_cycle5" = "50"     Info (12134): Parameter "output_clock_frequency6" = "0 MHz"     Info (12134): Parameter "phase_shift6" = "0 ps"     Info (12134): Parameter "duty_cycle6" = "50"     Info (12134): Parameter "output_clock_frequency7" = "0 MHz"     Info (12134): Parameter "phase_shift7" = "0 ps"     Info (12134): Parameter "duty_cycle7" = "50"     Info (12134): Parameter "output_clock_frequency8" = "0 MHz"     Info (12134): Parameter "phase_shift8" = "0 ps"     Info (12134): Parameter "duty_cycle8" = "50"     Info (12134): Parameter "output_clock_frequency9" = "0 MHz"     Info (12134): Parameter "phase_shift9" = "0 ps"     Info (12134): Parameter "duty_cycle9" = "50"     Info (12134): Parameter "output_clock_frequency10" = "0 MHz"     Info (12134): Parameter "phase_shift10" = "0 ps"     Info (12134): Parameter "duty_cycle10" = "50"     Info (12134): Parameter "output_clock_frequency11" = "0 MHz"     Info (12134): Parameter "phase_shift11" = "0 ps"     Info (12134): Parameter "duty_cycle11" = "50"     Info (12134): Parameter "output_clock_frequency12" = "0 MHz"     Info (12134): Parameter "phase_shift12" = "0 ps"     Info (12134): Parameter "duty_cycle12" = "50"     Info (12134): Parameter "output_clock_frequency13" = "0 MHz"     Info (12134): Parameter "phase_shift13" = "0 ps"     Info (12134): Parameter "duty_cycle13" = "50"     Info (12134): Parameter "output_clock_frequency14" = "0 MHz"     Info (12134): Parameter "phase_shift14" = "0 ps"     Info (12134): Parameter "duty_cycle14" = "50"     Info (12134): Parameter "output_clock_frequency15" = "0 MHz"     Info (12134): Parameter "phase_shift15" = "0 ps"     Info (12134): Parameter "duty_cycle15" = "50"     Info (12134): Parameter "output_clock_frequency16" = "0 MHz"     Info (12134): Parameter "phase_shift16" = "0 ps"     Info (12134): Parameter "duty_cycle16" = "50"     Info (12134): Parameter "output_clock_frequency17" = "0 MHz"     Info (12134): Parameter "phase_shift17" = "0 ps"     Info (12134): Parameter "duty_cycle17" = "50"     Info (12134): Parameter "pll_type" = "General"     Info (12134): Parameter "pll_subtype" = "General" Info (281010): Generating sgate simulator netlist using Simgen SIMGEN_PROGRESS Start of Model generation -- 0% complete SIMGEN_PROGRESS Phase 1 : Internal Objects created -- 25% complete SIMGEN_PROGRESS Phase 2 : Connections between internal objects made -- 60% complete SIMGEN_PROGRESS Phase 3 : Netlist generated -- 100% complete Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning     Info: Peak virtual memory: 800 megabytes     Info: Processing ended: Fri Jul 21 00:44:32 2017     Info: Elapsed time: 00:00:08     Info: Total CPU time (on all processors): 00:00:01 Info (23030): Evaluation of Tcl script run_simgen_cmd.tcl was successful Info: Quartus Prime Shell was successful. 0 errors, 0 warnings     Info: Peak virtual memory: 333 megabytes     Info: Processing ended: Fri Jul 21 00:44:32 2017     Info: Elapsed time: 00:00:11     Info: Total CPU time (on all processors): 00:00:04
+Info: pll_0: Simgen was successful
+Info: pll_0: "CodecAudio" instantiated altera_pll "pll_0"
+Info: ps2: Starting Generation of PS2 Controller
+Warning: ps2: No files generated for fileset SIM_VHDL
+Info: ps2: "CodecAudio" instantiated altera_up_avalon_ps2 "ps2"
+Info: sysid: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: sysid: Generated simulation model CodecAudio_sysid.vho
+Info: sysid: "CodecAudio" instantiated altera_avalon_sysid_qsys "sysid"
+Info: timer0: Starting RTL generation for module 'CodecAudio_timer0'
+Info: timer0:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64//perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64//perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=CodecAudio_timer0 --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0013_timer0_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --vhdl --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0013_timer0_gen//CodecAudio_timer0_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0013_timer0_gen/  ]
+Info: timer0: Done RTL generation for module 'CodecAudio_timer0'
+Info: timer0: "CodecAudio" instantiated altera_avalon_timer "timer0"
+Info: timer1: Starting RTL generation for module 'CodecAudio_timer1'
+Info: timer1:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64//perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64//perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=CodecAudio_timer1 --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0014_timer1_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --vhdl --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0014_timer1_gen//CodecAudio_timer1_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0014_timer1_gen/  ]
+Info: timer1: Done RTL generation for module 'CodecAudio_timer1'
+Info: timer1: "CodecAudio" instantiated altera_avalon_timer "timer1"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "CodecAudio" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: irq_mapper: Generated simulation model CodecAudio_irq_mapper.vho
+Info: irq_mapper: "CodecAudio" instantiated altera_irq_mapper "irq_mapper"
+Info: irq_synchronizer: "CodecAudio" instantiated altera_irq_clock_crosser "irq_synchronizer"
+Info: rst_controller: "CodecAudio" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'CodecAudio_cpu_cpu'
+Info: cpu:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64//eperlcmd.exe -I C:/altera_lite/15.1/quartus/bin64//perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=CodecAudio_cpu_cpu --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0020_cpu_gen/ --quartus_bindir=C:/altera_lite/15.1/quartus/bin64/ --vhdl --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0020_cpu_gen//CodecAudio_cpu_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0020_cpu_gen/  ]
+Info: cpu: # 2017.07.21 00:45:00 (*) Starting Nios II generation
+Info: cpu: # 2017.07.21 00:45:00 (*)   Checking for plaintext license.
+Info: cpu: # 2017.07.21 00:45:03 (*)   Couldn't query license setup in Quartus directory C:/altera_lite/15.1/quartus/bin64/
+Info: cpu: # 2017.07.21 00:45:03 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2017.07.21 00:45:03 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2017.07.21 00:45:03 (*)   Plaintext license not found.
+Info: cpu: # 2017.07.21 00:45:03 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2017.07.21 00:45:03 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2017.07.21 00:45:03 (*)   Creating all objects for CPU
+Info: cpu: # 2017.07.21 00:45:04 (*)   Creating 'C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0020_cpu_gen//CodecAudio_cpu_cpu_nios2_waves.do'
+Info: cpu: # 2017.07.21 00:45:04 (*)   Generating RTL from CPU objects
+Info: cpu: # 2017.07.21 00:45:04 (*)   Creating plain-text RTL
+Info: cpu: # 2017.07.21 00:45:06 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'CodecAudio_cpu_cpu'
+Info: cpu: "cpu" instantiated altera_nios2_gen2_unit "cpu"
+Info: audio_pll: Generating simgen model
+Info: audio_pll: Info: ******************************************************************* Info: Running Quartus Prime Shell     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition     Info: Copyright (C) 1991-2015 Altera Corporation. All rights reserved.     Info: Your use of Altera Corporation's design tools, logic functions      Info: and other software and tools, and its AMPP partner logic      Info: functions, and any output files from any of the foregoing      Info: (including device programming or simulation files), and any      Info: associated documentation or information are expressly subject      Info: to the terms and conditions of the Altera Program License      Info: Subscription Agreement, the Altera Quartus Prime License Agreement,     Info: the Altera MegaCore Function License Agreement, or other      Info: applicable license agreement, including, without limitation,      Info: that your use is for the sole purpose of programming logic      Info: devices manufactured by Altera and sold by Altera or its      Info: authorized distributors.  Please refer to the applicable      Info: agreement for further details.     Info: Processing started: Fri Jul 21 00:45:12 2017 Info: Command: quartus_sh -t run_simgen_cmd.tcl Info: ******************************************************************* Info: Running Quartus Prime Analysis & Synthesis     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition     Info: Copyright (C) 1991-2015 Altera Corporation. All rights reserved.     Info: Your use of Altera Corporation's design tools, logic functions      Info: and other software and tools, and its AMPP partner logic      Info: functions, and any output files from any of the foregoing      Info: (including device programming or simulation files), and any      Info: associated documentation or information are expressly subject      Info: to the terms and conditions of the Altera Program License      Info: Subscription Agreement, the Altera Quartus Prime License Agreement,     Info: the Altera MegaCore Function License Agreement, or other      Info: applicable license agreement, including, without limitation,      Info: that your use is for the sole purpose of programming logic      Info: devices manufactured by Altera and sold by Altera or its      Info: authorized distributors.  Please refer to the applicable      Info: agreement for further details.     Info: Processing started: Fri Jul 21 00:45:15 2017 Info: Command: quartus_map CodecAudio_dac_pll_audio_pll.qpf --simgen --ini=disable_check_quartus_compatibility_qsys_only=on --simgen_parameter=CBX_HDL_LANGUAGE=VHDL Info (20034): Auto device selection is not supported for Cyclone V device family. The default device, 5CGXFC7C7F23C8, is set. Warning (20028): Parallel compilation is not licensed and has been disabled Info (12021): Found 1 design units, including 1 entities, in source file codecaudio_dac_pll_audio_pll.v     Info (12023): Found entity 1: CodecAudio_dac_pll_audio_pll File: C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0021_audio_pll_gen/CodecAudio_dac_pll_audio_pll.v Line: 2 Info (12127): Elaborating entity "CodecAudio_dac_pll_audio_pll" for the top level hierarchy Info (12128): Elaborating entity "altera_pll" for hierarchy "altera_pll:altera_pll_i" File: C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0021_audio_pll_gen/CodecAudio_dac_pll_audio_pll.v Line: 85 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus Info (12130): Elaborated megafunction instantiation "altera_pll:altera_pll_i" File: C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0021_audio_pll_gen/CodecAudio_dac_pll_audio_pll.v Line: 85 Info (12133): Instantiated megafunction "altera_pll:altera_pll_i" with the following parameter: File: C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0021_audio_pll_gen/CodecAudio_dac_pll_audio_pll.v Line: 85     Info (12134): Parameter "fractional_vco_multiplier" = "false"     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"     Info (12134): Parameter "operation_mode" = "direct"     Info (12134): Parameter "number_of_clocks" = "1"     Info (12134): Parameter "output_clock_frequency0" = "12.288135 MHz"     Info (12134): Parameter "phase_shift0" = "0 ps"     Info (12134): Parameter "duty_cycle0" = "50"     Info (12134): Parameter "output_clock_frequency1" = "0 MHz"     Info (12134): Parameter "phase_shift1" = "0 ps"     Info (12134): Parameter "duty_cycle1" = "50"     Info (12134): Parameter "output_clock_frequency2" = "0 MHz"     Info (12134): Parameter "phase_shift2" = "0 ps"     Info (12134): Parameter "duty_cycle2" = "50"     Info (12134): Parameter "output_clock_frequency3" = "0 MHz"     Info (12134): Parameter "phase_shift3" = "0 ps"     Info (12134): Parameter "duty_cycle3" = "50"     Info (12134): Parameter "output_clock_frequency4" = "0 MHz"     Info (12134): Parameter "phase_shift4" = "0 ps"     Info (12134): Parameter "duty_cycle4" = "50"     Info (12134): Parameter "output_clock_frequency5" = "0 MHz"     Info (12134): Parameter "phase_shift5" = "0 ps"     Info (12134): Parameter "duty_cycle5" = "50"     Info (12134): Parameter "output_clock_frequency6" = "0 MHz"     Info (12134): Parameter "phase_shift6" = "0 ps"     Info (12134): Parameter "duty_cycle6" = "50"     Info (12134): Parameter "output_clock_frequency7" = "0 MHz"     Info (12134): Parameter "phase_shift7" = "0 ps"     Info (12134): Parameter "duty_cycle7" = "50"     Info (12134): Parameter "output_clock_frequency8" = "0 MHz"     Info (12134): Parameter "phase_shift8" = "0 ps"     Info (12134): Parameter "duty_cycle8" = "50"     Info (12134): Parameter "output_clock_frequency9" = "0 MHz"     Info (12134): Parameter "phase_shift9" = "0 ps"     Info (12134): Parameter "duty_cycle9" = "50"     Info (12134): Parameter "output_clock_frequency10" = "0 MHz"     Info (12134): Parameter "phase_shift10" = "0 ps"     Info (12134): Parameter "duty_cycle10" = "50"     Info (12134): Parameter "output_clock_frequency11" = "0 MHz"     Info (12134): Parameter "phase_shift11" = "0 ps"     Info (12134): Parameter "duty_cycle11" = "50"     Info (12134): Parameter "output_clock_frequency12" = "0 MHz"     Info (12134): Parameter "phase_shift12" = "0 ps"     Info (12134): Parameter "duty_cycle12" = "50"     Info (12134): Parameter "output_clock_frequency13" = "0 MHz"     Info (12134): Parameter "phase_shift13" = "0 ps"     Info (12134): Parameter "duty_cycle13" = "50"     Info (12134): Parameter "output_clock_frequency14" = "0 MHz"     Info (12134): Parameter "phase_shift14" = "0 ps"     Info (12134): Parameter "duty_cycle14" = "50"     Info (12134): Parameter "output_clock_frequency15" = "0 MHz"     Info (12134): Parameter "phase_shift15" = "0 ps"     Info (12134): Parameter "duty_cycle15" = "50"     Info (12134): Parameter "output_clock_frequency16" = "0 MHz"     Info (12134): Parameter "phase_shift16" = "0 ps"     Info (12134): Parameter "duty_cycle16" = "50"     Info (12134): Parameter "output_clock_frequency17" = "0 MHz"     Info (12134): Parameter "phase_shift17" = "0 ps"     Info (12134): Parameter "duty_cycle17" = "50"     Info (12134): Parameter "pll_type" = "General"     Info (12134): Parameter "pll_subtype" = "General" Info (281010): Generating sgate simulator netlist using Simgen SIMGEN_PROGRESS Start of Model generation -- 0% complete SIMGEN_PROGRESS Phase 1 : Internal Objects created -- 25% complete SIMGEN_PROGRESS Phase 2 : Connections between internal objects made -- 60% complete SIMGEN_PROGRESS Phase 3 : Netlist generated -- 100% complete Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning     Info: Peak virtual memory: 800 megabytes     Info: Processing ended: Fri Jul 21 00:45:22 2017     Info: Elapsed time: 00:00:07     Info: Total CPU time (on all processors): 00:00:01 Info (23030): Evaluation of Tcl script run_simgen_cmd.tcl was successful Info: Quartus Prime Shell was successful. 0 errors, 0 warnings     Info: Peak virtual memory: 333 megabytes     Info: Processing ended: Fri Jul 21 00:45:23 2017     Info: Elapsed time: 00:00:11     Info: Total CPU time (on all processors): 00:00:04
+Info: audio_pll: Simgen was successful
+Info: audio_pll: "dac_pll" instantiated altera_pll "audio_pll"
+Info: reset_from_locked: "dac_pll" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
+Info: cpu_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "cpu_data_master_translator"
+Info: audio_avalon_audio_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "audio_avalon_audio_slave_translator"
+Info: cpu_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "cpu_data_master_agent"
+Info: audio_avalon_audio_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "audio_avalon_audio_slave_agent"
+Info: audio_avalon_audio_slave_agent_rsp_fifo: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: audio_avalon_audio_slave_agent_rsp_fifo: Generated simulation model CodecAudio_mm_interconnect_0_audio_avalon_audio_slave_agent_rsp_fifo.vho
+Info: audio_avalon_audio_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "audio_avalon_audio_slave_agent_rsp_fifo"
+Info: audio_avalon_audio_slave_agent_rdata_fifo: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: audio_avalon_audio_slave_agent_rdata_fifo: Generated simulation model CodecAudio_mm_interconnect_0_audio_avalon_audio_slave_agent_rdata_fifo.vho
+Info: audio_avalon_audio_slave_agent_rdata_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "audio_avalon_audio_slave_agent_rdata_fifo"
+Warning: Parallel compilation is not licensed and has been disabled
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Warning: Parallel compilation is not licensed and has been disabled
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Warning: Parallel compilation is not licensed and has been disabled
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Warning: Parallel compilation is not licensed and has been disabled
+Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
+Info: cmd_demux: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: cmd_demux: Generated simulation model CodecAudio_mm_interconnect_0_cmd_demux.vho
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: cmd_demux_001: Generated simulation model CodecAudio_mm_interconnect_0_cmd_demux_001.vho
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: cmd_mux: Generated simulation model CodecAudio_mm_interconnect_0_cmd_mux.vho
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_005: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: cmd_mux_005: Generated simulation model CodecAudio_mm_interconnect_0_cmd_mux_005.vho
+Info: cmd_mux_005: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_005"
+Info: rsp_demux: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: rsp_demux: Generated simulation model CodecAudio_mm_interconnect_0_rsp_demux.vho
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_001: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: rsp_demux_001: Generated simulation model CodecAudio_mm_interconnect_0_rsp_demux_001.vho
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_mux: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: rsp_mux: Generated simulation model CodecAudio_mm_interconnect_0_rsp_mux.vho
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: rsp_mux_001: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: rsp_mux_001: Generated simulation model CodecAudio_mm_interconnect_0_rsp_mux_001.vho
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Warning: Parallel compilation is not licensed and has been disabled
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: CodecAudio: Done "CodecAudio" with 43 modules, 85 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\Users\JF\Drive\ETS\E2017\ELE748\Projet\code\projet\CodecAudio\CodecAudio.spd --output-directory=C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/CodecAudio/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\JF\Drive\ETS\E2017\ELE748\Projet\code\projet\CodecAudio\CodecAudio.spd --output-directory=C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/CodecAudio/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/CodecAudio/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/CodecAudio/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/CodecAudio/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	33 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/CodecAudio/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/CodecAudio/simulation/.
+Info: Finished: Create Modelsim Project.
+Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate E:\Donnees\ETS\ETE_2017\ELE748\lab_final\projet_748\projet\CodecAudio.qsys --synthesis=VHDL --output-directory=E:\Donnees\ETS\ETE_2017\ELE748\lab_final\projet_748\projet\CodecAudio\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate C:\Users\JF\Drive\ETS\E2017\ELE748\Projet\code\projet\CodecAudio.qsys --synthesis=VHDL --greybox --output-directory=C:\Users\JF\Drive\ETS\E2017\ELE748\Projet\code\projet\CodecAudio\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading projet/CodecAudio.qsys
 Progress: Reading input file
 Progress: Adding DataFromAccMat [altera_avalon_pio 15.1]
@@ -48,15 +263,15 @@ Info: CodecAudio: Generating CodecAudio "CodecAudio" for QUARTUS_SYNTH
 Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
 Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
 Info: DataFromAccMat: Starting RTL generation for module 'CodecAudio_DataFromAccMat'
-Info: DataFromAccMat:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=CodecAudio_DataFromAccMat --dir=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0001_DataFromAccMat_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0001_DataFromAccMat_gen//CodecAudio_DataFromAccMat_component_configuration.pl  --do_build_sim=0  ]
+Info: DataFromAccMat:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=CodecAudio_DataFromAccMat --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0074_DataFromAccMat_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0074_DataFromAccMat_gen//CodecAudio_DataFromAccMat_component_configuration.pl  --do_build_sim=0  ]
 Info: DataFromAccMat: Done RTL generation for module 'CodecAudio_DataFromAccMat'
 Info: DataFromAccMat: "CodecAudio" instantiated altera_avalon_pio "DataFromAccMat"
 Info: DataToAccMat: Starting RTL generation for module 'CodecAudio_DataToAccMat'
-Info: DataToAccMat:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=CodecAudio_DataToAccMat --dir=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0002_DataToAccMat_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0002_DataToAccMat_gen//CodecAudio_DataToAccMat_component_configuration.pl  --do_build_sim=0  ]
+Info: DataToAccMat:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=CodecAudio_DataToAccMat --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0075_DataToAccMat_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0075_DataToAccMat_gen//CodecAudio_DataToAccMat_component_configuration.pl  --do_build_sim=0  ]
 Info: DataToAccMat: Done RTL generation for module 'CodecAudio_DataToAccMat'
 Info: DataToAccMat: "CodecAudio" instantiated altera_avalon_pio "DataToAccMat"
 Info: ToggleAccMat: Starting RTL generation for module 'CodecAudio_ToggleAccMat'
-Info: ToggleAccMat:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=CodecAudio_ToggleAccMat --dir=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0003_ToggleAccMat_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0003_ToggleAccMat_gen//CodecAudio_ToggleAccMat_component_configuration.pl  --do_build_sim=0  ]
+Info: ToggleAccMat:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=CodecAudio_ToggleAccMat --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0076_ToggleAccMat_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0076_ToggleAccMat_gen//CodecAudio_ToggleAccMat_component_configuration.pl  --do_build_sim=0  ]
 Info: ToggleAccMat: Done RTL generation for module 'CodecAudio_ToggleAccMat'
 Info: ToggleAccMat: "CodecAudio" instantiated altera_avalon_pio "ToggleAccMat"
 Info: audio: Starting Generation of Audio Controller
@@ -66,11 +281,11 @@ Info: audio_and_video_config: "CodecAudio" instantiated altera_up_avalon_audio_a
 Info: cpu: "CodecAudio" instantiated altera_nios2_gen2 "cpu"
 Info: dac_pll: "CodecAudio" instantiated altera_up_avalon_audio_pll "dac_pll"
 Info: jtag_uart_0: Starting RTL generation for module 'CodecAudio_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=CodecAudio_jtag_uart_0 --dir=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0006_jtag_uart_0_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0006_jtag_uart_0_gen//CodecAudio_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=CodecAudio_jtag_uart_0 --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0079_jtag_uart_0_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0079_jtag_uart_0_gen//CodecAudio_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart_0: Done RTL generation for module 'CodecAudio_jtag_uart_0'
 Info: jtag_uart_0: "CodecAudio" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: onchipmem: Starting RTL generation for module 'CodecAudio_onchipmem'
-Info: onchipmem:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=CodecAudio_onchipmem --dir=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0007_onchipmem_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0007_onchipmem_gen//CodecAudio_onchipmem_component_configuration.pl  --do_build_sim=0  ]
+Info: onchipmem:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64/perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64/perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=CodecAudio_onchipmem --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0080_onchipmem_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0080_onchipmem_gen//CodecAudio_onchipmem_component_configuration.pl  --do_build_sim=0  ]
 Info: onchipmem: Done RTL generation for module 'CodecAudio_onchipmem'
 Info: onchipmem: "CodecAudio" instantiated altera_avalon_onchip_memory2 "onchipmem"
 Info: pll_0: "CodecAudio" instantiated altera_pll "pll_0"
@@ -78,11 +293,11 @@ Info: ps2: Starting Generation of PS2 Controller
 Info: ps2: "CodecAudio" instantiated altera_up_avalon_ps2 "ps2"
 Info: sysid: "CodecAudio" instantiated altera_avalon_sysid_qsys "sysid"
 Info: timer0: Starting RTL generation for module 'CodecAudio_timer0'
-Info: timer0:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64//perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64//perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=CodecAudio_timer0 --dir=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0011_timer0_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0011_timer0_gen//CodecAudio_timer0_component_configuration.pl  --do_build_sim=0  ]
+Info: timer0:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64//perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64//perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=CodecAudio_timer0 --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0084_timer0_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0084_timer0_gen//CodecAudio_timer0_component_configuration.pl  --do_build_sim=0  ]
 Info: timer0: Done RTL generation for module 'CodecAudio_timer0'
 Info: timer0: "CodecAudio" instantiated altera_avalon_timer "timer0"
 Info: timer1: Starting RTL generation for module 'CodecAudio_timer1'
-Info: timer1:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64//perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64//perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=CodecAudio_timer1 --dir=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0012_timer1_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0012_timer1_gen//CodecAudio_timer1_component_configuration.pl  --do_build_sim=0  ]
+Info: timer1:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64//perl/bin/perl.exe -I C:/altera_lite/15.1/quartus/bin64//perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/altera_lite/15.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=CodecAudio_timer1 --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0085_timer1_gen/ --quartus_dir=C:/altera_lite/15.1/quartus --verilog --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0085_timer1_gen//CodecAudio_timer1_component_configuration.pl  --do_build_sim=0  ]
 Info: timer1: Done RTL generation for module 'CodecAudio_timer1'
 Info: timer1: "CodecAudio" instantiated altera_avalon_timer "timer1"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -102,19 +317,19 @@ Info: irq_mapper: "CodecAudio" instantiated altera_irq_mapper "irq_mapper"
 Info: irq_synchronizer: "CodecAudio" instantiated altera_irq_clock_crosser "irq_synchronizer"
 Info: rst_controller: "CodecAudio" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'CodecAudio_cpu_cpu'
-Info: cpu:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64//eperlcmd.exe -I C:/altera_lite/15.1/quartus/bin64//perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=CodecAudio_cpu_cpu --dir=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0016_cpu_gen/ --quartus_bindir=C:/altera_lite/15.1/quartus/bin64/ --verilog --config=C:/Users/PC_XAV~1/AppData/Local/Temp/alt7363_6975122683026272044.dir/0016_cpu_gen//CodecAudio_cpu_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2017.07.16 13:15:55 (*) Starting Nios II generation
-Info: cpu: # 2017.07.16 13:15:55 (*)   Checking for plaintext license.
-Info: cpu: # 2017.07.16 13:15:58 (*)   Couldn't query license setup in Quartus directory C:/altera_lite/15.1/quartus/bin64/
-Info: cpu: # 2017.07.16 13:15:58 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2017.07.16 13:15:58 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2017.07.16 13:15:58 (*)   Plaintext license not found.
-Info: cpu: # 2017.07.16 13:15:58 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2017.07.16 13:15:58 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2017.07.16 13:15:58 (*)   Creating all objects for CPU
-Info: cpu: # 2017.07.16 13:15:59 (*)   Generating RTL from CPU objects
-Info: cpu: # 2017.07.16 13:15:59 (*)   Creating plain-text RTL
-Info: cpu: # 2017.07.16 13:16:00 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/altera_lite/15.1/quartus/bin64//eperlcmd.exe -I C:/altera_lite/15.1/quartus/bin64//perl/lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin/europa -I C:/altera_lite/15.1/quartus/sopc_builder/bin/perl_lib -I C:/altera_lite/15.1/quartus/sopc_builder/bin -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/altera_lite/15.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=CodecAudio_cpu_cpu --dir=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0089_cpu_gen/ --quartus_bindir=C:/altera_lite/15.1/quartus/bin64/ --verilog --config=C:/Users/JF/AppData/Local/Temp/alt7368_1369468382667908455.dir/0089_cpu_gen//CodecAudio_cpu_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2017.07.21 00:48:17 (*) Starting Nios II generation
+Info: cpu: # 2017.07.21 00:48:17 (*)   Checking for plaintext license.
+Info: cpu: # 2017.07.21 00:48:20 (*)   Couldn't query license setup in Quartus directory C:/altera_lite/15.1/quartus/bin64/
+Info: cpu: # 2017.07.21 00:48:20 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2017.07.21 00:48:20 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2017.07.21 00:48:20 (*)   Plaintext license not found.
+Info: cpu: # 2017.07.21 00:48:20 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2017.07.21 00:48:20 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2017.07.21 00:48:20 (*)   Creating all objects for CPU
+Info: cpu: # 2017.07.21 00:48:21 (*)   Generating RTL from CPU objects
+Info: cpu: # 2017.07.21 00:48:21 (*)   Creating plain-text RTL
+Info: cpu: # 2017.07.21 00:48:21 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'CodecAudio_cpu_cpu'
 Info: cpu: "cpu" instantiated altera_nios2_gen2_unit "cpu"
 Info: audio_pll: "dac_pll" instantiated altera_pll "audio_pll"
@@ -132,16 +347,18 @@ Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "c
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_005: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_005"
-Info: Reusing file E:/Donnees/ETS/ETE_2017/ELE748/lab_final/projet_748/projet/CodecAudio/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/CodecAudio/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file E:/Donnees/ETS/ETE_2017/ELE748/lab_final/projet_748/projet/CodecAudio/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/CodecAudio/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file E:/Donnees/ETS/ETE_2017/ELE748/lab_final/projet_748/projet/CodecAudio/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/JF/Drive/ETS/E2017/ELE748/Projet/code/projet/CodecAudio/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: CodecAudio: Done "CodecAudio" with 42 modules, 83 files
+Info: Generating third-party timing and resource estimation model ...
+Info: Done generating third-party timing and resource estimation model.
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

@@ -1,17 +1,17 @@
-Analysis & Synthesis Status : Successful - Sun Jul 16 13:17:22 2017
+Analysis & Synthesis Status : Successful - Fri Jul 21 01:34:30 2017
 Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 Revision Name : CodecAudio
-Top-level Entity Name : top_level
+Top-level Entity Name : main
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 1834
-Total pins : 56
+Total registers : 13210
+Total pins : 67
 Total virtual pins : 0
-Total block memory bits : 2,116,608
-Total DSP Blocks : 0
+Total block memory bits : 2,319,432
+Total DSP Blocks : 64
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
 Total HSSI PMA TX Serializers : 0
-Total PLLs : 3
+Total PLLs : 4
 Total DLLs : 0

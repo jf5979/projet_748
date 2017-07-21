@@ -1,1 +1,2 @@
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) sine/sine.qip]
 set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) CodecAudio/CodecAudio.qip]

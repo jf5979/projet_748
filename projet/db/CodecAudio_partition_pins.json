@@ -4,83 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "DATA_TO_ACC_MAT[0]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[1]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[2]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[3]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[4]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[5]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[6]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[7]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[8]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[9]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[10]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[11]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[12]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[13]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[14]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[15]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[16]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[17]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[18]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_TO_ACC_MAT[19]",
+					"name" : "FPGA_I2C_SCLK",
 					"strict" : false
 				},
 				{
@@ -88,7 +12,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "FPGA_I2C_SCLK",
+					"name" : "FPGA_I2C_SDAT",
 					"strict" : false
 				},
 				{
@@ -97,10 +21,6 @@
 				},
 				{
 					"name" : "PS2_DAT",
-					"strict" : false
-				},
-				{
-					"name" : "FPGA_I2C_SDAT",
 					"strict" : false
 				},
 				{
@@ -116,99 +36,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "DATA_FROM_ACC_MAT[0]",
+					"name" : "types[0]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_FROM_ACC_MAT[1]",
+					"name" : "types[1]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_FROM_ACC_MAT[2]",
+					"name" : "enable",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_FROM_ACC_MAT[3]",
+					"name" : "parametre[2]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_FROM_ACC_MAT[4]",
+					"name" : "parametre[3]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_FROM_ACC_MAT[5]",
+					"name" : "parametre[4]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_FROM_ACC_MAT[6]",
+					"name" : "parametre[0]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_FROM_ACC_MAT[7]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[8]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[9]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[10]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[11]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[12]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[13]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[14]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[15]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[16]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[17]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[18]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[19]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[20]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[21]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[22]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_FROM_ACC_MAT[23]",
+					"name" : "parametre[1]",
 					"strict" : false
 				}
 			]
